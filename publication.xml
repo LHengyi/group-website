@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <title> <author> <year> tags are necessary -->
+<publication>
+  <paper type='journal'>
+  	<title>Proactive Demand Participation of Smart Buildings in Smart Grid</title>
+  	<author>Tianshu Wei*, Qi Zhu and Nanpeng Yu</author>
+  	<press>IEEE Transactions on Computers (TC)</press>
+  	<year>2015</year>
+  	<month>Oct.</month> 
+    <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7308024&amp;newsearch=true&amp;queryText=Proactive%20Demand%20Participation%20of%20Smart%20Buildings%20in%20Smart%20Grid</source>
+  </paper>
+
+  <paper type='conference'>
+  	<title>Security Analysis of Proactive Participation of Smart Buildings in Smart Grid</title>
+  	<author>Tianshu Wei*, Bowen Zheng*, Qi Zhu and Shiyan Hu</author>
+  	<press>34th IEEE/ACM International Conference on Computer-Aided Design (ICCAD'15)</press>
+  	<location>Austin, TX</location>
+  	<year>2015</year>
+  	<month>Nov.</month>
+    <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7372606&amp;newsearch=true&amp;queryText=Security%20Analysis%20of%20Proactive%20Participation%20of%20Smart%20Buildings%20in%20Smart%20Grid</source>
+  </paper>
+
+  <paper type='conference'>
+    <title>Analysis and Optimization of Soft Error Tolerance Strategies for Real-time Systems</title>
+    <author>Bowen Zheng*, Yue Gao, Qi Zhu and Sandeep Gupta</author>
+    <press>13th IEEE/ACM International Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS'15)</press>
+    <location>Amsterdam, Netherlands</location>
+    <year>2015</year>
+    <month>Oct.</month>
+    <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7331368&amp;newsearch=true&amp;queryText=Analysis%20and%20Optimization%20of%20Soft%20Error%20Tolerance%20Strategies%20for%20Real-time%20Systems</source>
+  </paper>
+
+  <paper type='conference'>
+    <title>Security-Aware Design Methodology and Optimization for Automotive Systems</title>
+    <author>Chung-Wei Lin, Bowen Zheng*, Qi Zhu and Alberto Sangiovanni-Vincentelli</author>
+    <press>ACM Transactions on Design Automation of Electronic Systems (TODAES)</press>
+    <year>2015</year>
+    <month>Dec.</month>
+    <source>http://dl.acm.org/citation.cfm?id=2803174</source>
+  </paper>
+
+  <paper type='conference'>
+    <title>From Passive Demand Response to Proactive Demand Participation</title>
+    <author>Nanpeng Yu, Tianshu Wei* and Qi Zhu</author>
+    <press>11th IEEE International Conference on Automation Science and Engineering (CASE'15)</press>
+    <location>Gothenburg, Sweden</location>
+    <year>2015</year>
+    <month>Aug.</month>
+    <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7294278&amp;queryText=From%20Passive%20Demand%20Response%20to%20Proactive%20Demand%20Participation&amp;newsearch=true</source>
+  </paper>
+              
+  <paper type='conference'>
+    <title>Design and Verification for Transportation System Security</title>
+    <author>Bowen Zheng, Wenchao Li, Peng Deng, Leonard Gerard, Qi Zhu and Natarajan Shankar</author>
+    <press>52nd ACM/IEEE Design Automation Conference (DAC)</press>
+    <year>2015</year>
+    <month>Jun.</month>
+    <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7167280&amp;newsearch=true&amp;queryText=Design%20and%20Verification%20for%20Transportation%20System%20Security</source>
+  </paper>
+
+  <paper type='conference'>
+    <title>Optimal Control of PEVs for Energy Cost Minimization and Frequency Regulation in the Smart Grid Accounting for Battery State-of-Health Degradation</title>
+    <author>Tiansong Cui, Shuang Chen, Yanzhi Wang, Shahin Nazarian, Qi Zhu and Massoud Pedram</author>
+    <press>52nd ACM/IEEE Design Automation Conference (DAC)</press>
+    <year>2015</year>
+    <month>Jun.</month>
+    <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7167319&amp;newsearch=true&amp;queryText=Optimal%20Control%20of%20PEVs%20for%20Energy%20Cost%20Minimization%20and%20Frequency%20Regulation%20in%20the%20Smart%20Grid%20Accounting%20for%20Battery%20State-of-Health%20Degradation</source>
+  </paper>
+
+  <paper type='conference'>
+    <title>PeerWave: Exploiting Wavefront Parallelism on GPUs with Peer-SM Synchronization</title>
+    <author>Mehmet Belviranli, Peng Deng, Laxmi Bhuyan, Rajiv Gupta and Qi Zhu</author>
+    <press>29th ACM International Conference on Supercomputing (ICS)</press>
+    <year>2015</year>
+    <month>Jun.</month>
+    <source>http://dl.acm.org/citation.cfm?id=2751243</source>
+  </paper>
+
+  <paper type='conference'>
+    <title>A Model-based Synthesis Flow for Automotive CPS</title>
+    <author>Peng Deng*, Fabio Cremona, Qi Zhu, Marco Di Natale and Haibo Zeng</author>
+    <press>6th ACM/IEEE International Conference on Cyber-Physical Systems (ICCPS)</press>
+    <year>2015</year>
+    <month>Apr.</month>
+    <source>http://dl.acm.org/citation.cfm?id=2735972</source>
+  </paper>
+
+</publication>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title>WCH222 | Group</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<link rel="stylesheet" href="stylesheets/app.css">
+<link rel="stylesheet" href="stylesheets/group.css">  <!-- define topbox and bottombox property -->
+<script src="javascripts/modernizr.foundation.js"></script>
+<script src="javascripts/group.js"></script>  <!-- define menu bar, topbox and bottombox property -->
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body onload='resize_bottombox_group()' onresize='resize_bottombox_group()'>
+<div class="row page_wrap">
+  <!-- page wrap -->
+  <div class="twelve columns" id="id_columns">
+    <!-- page wrap -->
+    <div class="row" id="id_top_wrap">
+      <div class="nine columns header_nav" id="id_menubox">
+        <ul id="menu-header" class="nav-bar horizontal">
+          <li id ="menu_home" onmouseOver='mouseOver("menu_home","#CC6666")' onmouseOut='mouseOut("menu_home","#CC9999")'><a style="color:white" href="index.html">Home</a></li>
+          <li class="has-flyout" id ="menu_research" onmouseOver='mouseOver("menu_research","#CC6666")' onmouseOut='mouseOut("menu_research","#CC9999")'> <a style="color:white" href="overview.html">Projects</a><a href="overview.html" class="flyout-toggle"></a>
+            <ul class="flyout">
+              <li class="has-flyout"><a href="researches/synthesis_fault_tolerance.html">Software Synthesis & Fault Tolerance</a></li>
+              <li class="has-flyout"><a href="researches/efficient_building.html">Energy-efficient CPS</a></li>
+              <li class="has-flyout"><a href="researches/cyber_security.html">Cyber Physical Security</a></li>
+              <li class="has-flyout"><a href="researches/computer_vision.html">Computer vision</a></li>
+            </ul>
+          </li>
+          <li id ="menu_publication" onmouseOver='mouseOver("menu_publication","#CC6666")' onmouseOut='mouseOut("menu_publication","#CC9999")'><a style="color:white" href="publication.html">Publication</a></li>
+          <li id ="menu_group" onmouseOver='mouseOver("menu_group","#CC6666")' onmouseOut='mouseOut("menu_group","#CC9999")'><a style="color:white" href="group.html">Group</a></li>
+          <li id ="menu_contact" onmouseOver='mouseOver("menu_contact","#CC6666")' onmouseOut='mouseOut("menu_contact","#CC9999")'><a style="color:white" href="contact.html">Contact</a></li>
+        </ul>
+        <script>$('ul#menu-header').nav-bar();</script>
+      </div>
+      <div class="three columns header_logo" id="id_logobox"> <!-- <img src="images/logo.png" class="hide-for-small" alt=""> --> </div>
+    </div>
+  
+    <div style="clear: both"></div>
+    <div><br><br><br><br></div>
+    <div class="row hide-for-small">
+      <div class="twelve columns">
+        <div class="heading_dots">
+          <h1 class="heading_supersize"><span class="heading_center_bg">Research of Cyber Physical System Lab</span></h1>
+        </div>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="nine columns header_nav">
+        <ul id="menu-header" class="nav-bar horizontal">
+          <li style="background-color:lightgrey"><a href="group.html">Prof. Qi Zhu</a></li>
+          <li ><a href="group-current.html">Current Students</a></li>
+          <li ><a href="group-former.html">Alumni</a></li>
+        </ul>
+        <script>$('ul#menu-header').nav-bar();</script>
+      </div>
+    </div>
+	<hr/>
+    
+	<div class="row">
+      <div class="six columns"> <img src="images/prod_large.jpg" alt=""> </div>
+      <div class="six columns">
+        <div class="panel">
+          <h3>Prof. Qi Zhu Bio</h3>
+          <p><font size="3">Dr. Qi Zhu is an Assistant Professor at the Department of Electrical Engineering in University of California, Riverside. 
+		  Prior to joining UCR, Dr. Zhu was a research scientist at the Strategic CAD Labs in Intel from 2008 to 2011. Dr. Zhu received
+		  a Ph.D. in EECS from University of California, Berkeley in 2008, and a B.E. in CS from Tsinghua University in 2003. His research
+		  interests include model-based design, software synthesis for real-time embedded systems, energy-efficient cyber-physical systems,
+		  and system-on-chip design. He received best paper awards at the Design Automation Conference (DAC) 2006, DAC 2007, and International
+		  Conference on Cyber-Physical Systems (ICCPS) 2013.<br><a href="http://www.ee.ucr.edu/~qzhu/CV_QiZhu.pdf" target="new">Curricula Vitae</a></font><p>
+          </form>
+        </div>
+        <!-- end panel -->
+      </div>
+    </div>
+    <!-- end row -->
+    <!-- <h4>Prof. Qi Zhu</h4>-->
+    <div class="row">
+      <div class="twelve columns">
+        <dl class="tabs three-up">
+          <dd class="active"><a href="#simple1">Research</a></dd>
+          <dd><a href="#simple2">Teaching</a></dd>
+          <dd><a href="#simple3">Professional Service</a></dd>
+        </dl>
+        <ul class="tabs-content">
+          <li class="active" id="simple1Tab">
+            <p><b>Areas of Interests: model-based design, software synthesis, distributed embedded systems, energy-efficient cyber-physical systems, SoC design.</b></p>
+            <p>My recent projects have been focusing on system level synthesis, optimization and modeling methodologies for distributed embedded systems and cyber-physical systems:</p>
+			<ul>
+              <li><b>Software synthesis for real-time embedded systems  [C26, C23, C22, C20, C19, C17, C16, C14, C12, C10, C9, J9, J8, J7, J6]</b></li>
+			    <p>This work aims at generating efficient and correct software task implementations for real-time embedded applications. 
+				We developed algorithms for optimal multi-task implementations of synchronous finite state machines and of synchronous 
+				block diagrams; for security-aware task mapping in CAN-based systems and TDMA-based systems; for optimal implementation 
+				of synchronous models on LTTA platforms; and for memory usage minimization in real-time systems.</p>
+              <li><b>Design optimization for building automation and control systems [C21, C15, C11, C8, J3]</b></li>
+			  <p>To reduce energy consumption, modern green buildings employ complex automation systems that closely monitor and control 
+			  the building environment (e.g. HVAC and lighting control). We proposed a design flow to co-design the HVAC control algorithm,
+			  the embedded platform, and the heterogeneous energy system at system level, and then optimally and correctly implement the control
+			  algorithm on a distributed building platform, with consideration of physical elements such as building layout, sensor/actuator 
+			  locations and environment dynamics.</p>
+              <li><b>Design frameworks for heterogeneous embedded systems [C18, C4, J4]</b></li>
+			  <p>I was part of the Metropolis project conducted at UC Berkeley, which provides a system level framework for modeling heterogeneous
+			  systems and performing various design activities such as simulation, verification and synthesis. Recently, we worked on integrating 
+			  Metro II with Ptolemy for timing verification of cyber-physical systems.</p>
+			  <li><b>Extensibility optimization for distributed embedded systems [C7, J2]</b></li>
+			  <p>This work optimizes an extensibility metric that measures how much the execution times of software tasks can be increased without
+			  violating design constraints. Optimizing extensibility allows adding future functionality or upgrading existing functionality without 
+			  major redesign cycle, which is imperative for large-volume and long lifetime systems such as vehicles, airplanes and buildings. This 
+			  work was in collaboration with United Technologies.</p>
+			  <li><b>Task allocation and priority assignment for distributed embedded systems [C6, J5]</b></li>
+			  <p>This work minimizes the end-to-end latencies along timing-critical paths in distributed embedded systems, by exploring major design
+			  variables such as the allocation and priority assignment of tasks and signals. End-to-end latencies are crucial for system performance
+			  and safety. This work was in collaboration with General Motors.</p>
+			  <li><b>Period optimization for distributed embedded systems [C5, CWIP1]</b></li>
+			  <p>This work also targets the reduction of end-to-end latencies in distributed embedded systems, through exploring the activation periods
+			  of tasks and messages. It was in collaboration with General Motors.</p>
+            </ul>
+
+			<p>In past, I also worked on CAD for circuits, including projects on logic synthesis and physical design:</p>
+			<ul>
+			  <li><b>SAT sweeping with local observability don't cares [C3]</b></li>
+			  <p>Boolean reasoning is an essential part of electronic design automation. AND-INVERTER Graphs (AIGs) are often used to represent Boolean
+			  functions but have a high degree of structural redundancy. We proposed a significant extension of the SAT-sweeping algorithm that exploits 
+			  local observability don't-cares (ODCs) to simplify AIGs. This work was in collaboration with Cadence.</p>
+			  <li><b>Non-rectilinear global routing [C1, J1]</b></li>
+			  <p>We proposed global routing algorithms for octilinear interconnect architecture, and extended them to general non-rectilinear interconnect.</p>
+			</ul>
+			<p>I am also very interested in SoC design methodologies and tools. While in Berkeley, I worked with Intel on a project of exploring different
+			implementations of JPEG encoder on Intel MXP5800 media processor ([C2]). While at the Strategic CAD Labs in Intel, I worked on system level 
+			modeling and exploration methodologies and tools for Intel SoCs.</p>
+          </li>
+          <li id="simple2Tab">
+		    <ul>
+			  <li>Embedded Systems Design - New Principles and Applications (EE 260): Winter 2015, Winter 2014, Fall 2012.</li>
+			  <li>Logic Design (EE/CS 120A): Winter 2015, Fall 2014, Winter 2014, Fall 2013, Winter 2013, Fall 2012, Winter 2012, Fall 2011.</li>
+			  <li>Digital Integrated Circuit Layout and Design (EE 134): Winter 2012.</li>
+			</ul>
+		  </li>
+          <li id="simple3Tab">
+		    <p><b>Technical Program Committee Member:</b></p>
+            <ul>
+			  <li><a href="http://www.iccad.com/">ICCAD 2013, 2014, 2015: IEEE/ACM International Conference on Computer-Aided Design</a></li>
+			  <li><a href="http://esweek.acm.org/codesisss/">CODES+ISSS 2015: IEEE/ACM International Conference on Hardware/Software Codesign and System Synthesis</a></li>
+			  <li><a href="http://www.aspdac.com/aspdac2015/index.html">ASP-DAC 2015: IEEE/ACM Asia and South Pacific Design Automation Conference</a></li>
+			  <li><a href="http://www.dac.com/">DAC 2012, 2013, 2014: IEEE/ACM Design Automation Conference</a></li>
+			  <li><a href="http://www.cister.isep.ipp.pt/sies2013/porto/">SIES 2013, 2014: IEEE International Symposium on Industrial Embedded Systems</a></li>
+			  <li><a href="http://memocode.irisa.fr/2015/">MemoCODE 2012, 2013: IEEE/ACM International Conference on Formal Methods and Models for Codesign</a></li>
+			  <li><a href="http://2015.rtas.org/">RTAS 2012: IEEE Real-time and Embedded Technology and Applications Symposium</a></li>
+			  <li><a href="http://www.icpads.org/">ICPADS 2012: International Conference on Parallel and Distributed Systems </a></li>
+			  <li><a href="http://vlsidat.itri.org.tw/2012/General/">VLSI-DAT 2012, 2013: IEEE International Symposium on VLSI Design, Automation and Test</a></li>
+			</ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end Masonry container -->
+  </div>
+</div>
+
+<div id="topbox">
+    <img src="images/top1.png" alt="top picture" style="height: 100%; width: 100%;">
+</div> 
+<div id="topgradient">
+    <img src="images/gradient1.png" alt="top gradient" style="height: 100%; width: 100%;">
+</div>
+
+<div id="id_trans_box" ></div>
+
+<div>
+  <div id="bottomgradient">
+      <img src="images/gradient2.png" alt="bottom gradient" style="height: 100%; width: 100%;">
+  </div>
+  <div id="bottombox">
+    <div class="row page_wrap" id="id_bottom_wrap">
+      <div class="twelve columns" id="id_bottom_columns">
+        <div class="row" id="id_right">
+          <div class="four columns" id="id_info1"> 
+            <h3><font style="color:white;">Qi Zhu</font></h3>
+            <hr/>
+            <p><font style="color:white;">Assistant Professor of Electrical Engineering<br>University of California, Riverside<br>Department of Electrical and Computer Engineering<br>322 Winston Chung Hall</font></p>
+            <p><font style="color:white;">Phone: 951-827-7701<br>Email: qzhu at ece dot ucr dot edu<br><a href="group.html">Personal Website</a></font></p>
+          </div>
+          <div class="four columns" id="id_info3"> 
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="four columns" id="id_info2"> 
+            <h3><font style="color:white;">Related Links</font></h3>
+            <hr/>
+            <p>
+              <a href="http://www.ucr.edu/" target="new">University of California, Riverside</a><br>
+              <a href="http://www.ece.ucr.edu/" target="new">ECE Department</a><br>
+              <a href="http://library.ucr.edu/" target="new">UCR Library</a><br>
+              <a href="http://campusmap.ucr.edu/imap/index.html" target="new">Maps and Directions</a>
+            </p>
+          </div>
+      
+          <div class="twelve columns" id="id_right1">
+            <ul id="menu3" class="footer_menu horizontal">
+              <li ><a href="index.html"><font color="white">Home</a> | Copyright &copy 2015 The Embedded System Research Group. All rights reserved.</font></li>
+            </ul>
+          </div>
+          <script>$('ul#menu3').nav-bar();</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end page wrap) -->
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+<script>
+$(function () {
+    var $container = $('#container');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+</script>
+<!-- END Masonry -->
+</body>
+</html>

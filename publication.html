@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title>WCH222 | Publication</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<link rel="stylesheet" href="stylesheets/app.css">
+<link rel="stylesheet" href="stylesheets/publication.css">  <!-- define topbox and bottombox property -->
+<script src="javascripts/modernizr.foundation.js"></script>
+<script src="javascripts/publication.js"></script>  <!-- define menu bar, topbox and bottombox property -->
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body id='top' onload='resize_bottombox_publication();align_column();' onresize='resize_bottombox_publication();align_column();'>
+<div class="row page_wrap">
+  <!-- page wrap -->
+  <div class="twelve columns">
+    <!-- page wrap -->
+    <div class="row" id="id_top_wrap">
+      <div class="nine columns header_nav" id="id_menubox">
+        <ul id="menu-header" class="nav-bar horizontal">
+          <li id ="menu_home" onmouseOver='mouseOver("menu_home","#CC6666")' onmouseOut='mouseOut("menu_home","#CC9999")'><a style="color:white" href="index.html">Home</a></li>
+          <li class="has-flyout" id ="menu_research" onmouseOver='mouseOver("menu_research","#CC6666")' onmouseOut='mouseOut("menu_research","#CC9999")'> <a style="color:white" href="overview.html">Projects</a><a href="overview.html" class="flyout-toggle"></a>
+            <ul class="flyout">
+              <li class="has-flyout"><a href="researches/synthesis_fault_tolerance.html">Software Synthesis & Fault Tolerance</a></li>
+              <li class="has-flyout"><a href="researches/efficient_building.html">Energy-efficient CPS</a></li>
+              <li class="has-flyout"><a href="researches/cyber_security.html">Cyber Physical Security</a></li>
+              <li class="has-flyout"><a href="researches/computer_vision.html">Computer vision</a></li>
+            </ul>
+          </li>
+          <li id ="menu_publication" onmouseOver='mouseOver("menu_publication","#CC6666")' onmouseOut='mouseOut("menu_publication","#CC9999")'><a style="color:white" href="publication.html">Publication</a></li>
+          <li id ="menu_group" onmouseOver='mouseOver("menu_group","#CC6666")' onmouseOut='mouseOut("menu_group","#CC9999")'><a style="color:white" href="group.html">Group</a></li>
+          <li id ="menu_contact" onmouseOver='mouseOver("menu_contact","#CC6666")' onmouseOut='mouseOut("menu_contact","#CC9999")'><a style="color:white" href="contact.html">Contact</a></li>
+        </ul>
+        <script>$('ul#menu-header').nav-bar();</script>
+      </div>
+      <div class="three columns header_logo" id="id_logobox"> <!-- <img src="images/logo.png" class="hide-for-small" alt=""> --> </div>
+    </div>
+  
+    <div style="clear: both"></div>
+    <div><br><br><br><br></div>
+    <div class="row hide-for-small">
+      <div class="twelve columns">
+        <div class="heading_dots">
+          <h1 class="heading_supersize"><span class="heading_center_bg">Research of Cyber Physical System Lab</span></h1>
+        </div>
+      </div>
+    </div>
+	
+    <div class="cols-2" style="padding-top: 25px;">
+      <div class="pricing_box large radius-left" id="id_years">
+        <div class="header"><span>Year</span></div>
+          <div id="category">
+        <!--<ul id="category">
+          <li class="even year"><strong class="yes"><a href="#id_2015">2015</a></strong></li>
+          <li class="odd year"><strong class="no"><a href="#id_2014">2014</a></strong></li>
+          <li class="even year"><strong class="yes"><a href="#id_2013">2013</a></strong></li>
+          <li class="odd year"><strong class="no"><a href="#id_2012">2012</a></strong></li>
+          <li class="even year"><strong class="yes"><a href="#id_pre_2011">Before 2011</a></strong></li>
+        </ul>-->
+          </div>
+      </div>
+    </div>
+	
+	<div class="cols-3" style="padding-top: 0px;">
+	  <div class="pricing_box large radius-right" id="id_papers">
+      <div class="header"><span>Publication</span></div>
+		    <div class="blog_post" id="publication">
+          <!-- Begin Blog Post -->
+          <div class="heading_dots_grey">
+            <h3><span class="heading_bg">&nbsp Publication</span></h3>
+          </div>
+          <!-- <img src="images/demo2_small.jpg" alt="" style="width:100%"> -->
+    		  <p></p>
+
+          
+          <script>
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                myFunction(xhttp);
+                }
+            };
+            xhttp.open("GET","publication.xml", true);
+            xhttp.send();
+
+            function myComp(a,b)
+            {
+              return a<b;
+            }
+            function myFunction(xml) {
+              var xmlDoc = xml.responseXML;
+              
+              var threshold = "2011"; // papers before this year are shown together
+              var even = 1;
+              var doc = xmlDoc.documentElement.childNodes;
+              // get years
+              var count = 0;
+              yearList = [];
+              for(var i=0;i<doc.length;i++)
+              {
+                if(doc[i].nodeName=="#text") {continue;}
+                var year = doc[i].getElementsByTagName("year")[0].childNodes[0].nodeValue.toString();
+                if(yearList.indexOf(parseInt(year))<0) {yearList[count] = parseInt(year); count++;}
+              }
+              yearList.sort(myComp);
+
+              // category
+              for(var i=0;i<yearList.length;i++)
+              {
+                var year = yearList[i].toString();
+
+                var para = document.createElement("p");
+                var a = document.createElement("a");
+                if(even%2==1) {para.style = "text-align: center; line-height: 4em; background: #fff;";}
+                else {para.style = "text-align: center; line-height: 4em; background: #F9F9F9;";}
+                even = (even+1)%2;
+                if(parseInt(year)>=parseInt(threshold))
+                {
+                  if(parseInt(year)==parseInt(threshold)) {a.innerHTML = "Before "+year; a.href = "#id_pre"+year;}
+                  else {a.innerHTML = year; a.href = "#id_"+year;}
+                  para.appendChild(a); document.getElementById("category").appendChild(para);
+                /*
+                var li = document.createElement("li");
+                var strong = document.createElement("strong");
+                var a = document.createElement("a");
+                if(even%2==1) {li.style = "text-align: center; line-height: 4em; margin-left:0; list-style-type: none!important; background: #fff;";}
+                else {li.style = "text-align: center; line-height: 4em; margin-left:0; list-style-type: none!important; background: #F9F9F9;";}
+                even = (even+1)%2;
+                a.innerHTML = year; a.href = "#id_"+year;
+                strong.appendChild(a); li.appendChild(strong); document.getElementById("category").appendChild(li);
+                */
+                  var para = document.createElement("p");
+                  var bold = document.createElement("b");
+                  if(parseInt(year)==parseInt(threshold)) {para.id = "id_pre"+year; bold.innerHTML = "Before "+year;}
+                  else {para.id = "id_"+year; bold.innerHTML = year;}
+                  para.appendChild(bold);
+                  document.getElementById("publication").appendChild(para);
+
+                  var para = document.createElement("p");
+                  if(parseInt(year)==parseInt(threshold)) {para.id = "paper_pre"+year;}
+                  else {para.id = "paper"+year;}
+                  para.align = "left";
+                  para.style = "padding: 0px 30px; 0px; 30px;";
+                  document.getElementById("publication").appendChild(para);
+
+                  var hr = document.createElement("hr");
+                  if(parseInt(year)!=parseInt(threshold)) {document.getElementById("publication").appendChild(hr);}
+                }
+              }
+
+              // add papers
+              for(var i=0;i<doc.length;i++)
+              {
+                if(doc[i].nodeName=="#text") {continue;}
+                var year = doc[i].getElementsByTagName("year")[0].childNodes[0].nodeValue.toString();
+                // add papers
+                var bold = document.createElement("b");
+                bold.innerHTML = "Title:&nbsp ";
+                if(parseInt(year)<=parseInt(threshold)) {document.getElementById("paper_pre"+threshold).appendChild(bold);}
+                else {document.getElementById("paper"+year).appendChild(bold);}
+
+                var a = document.createElement("a");
+                a.target ="#"; a.href = doc[i].getElementsByTagName("source").length>0?doc[i].getElementsByTagName("source")[0].childNodes[0].nodeValue.toString():"#";
+                var bold = document.createElement("b");
+                bold.innerHTML = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString();
+                var br = document.createElement("br");
+                a.appendChild(bold); 
+                if(parseInt(year)<=parseInt(threshold)) {document.getElementById("paper_pre"+threshold).appendChild(a); document.getElementById("paper_pre"+threshold).appendChild(br);}
+                else {document.getElementById("paper"+year).appendChild(a); document.getElementById("paper"+year).appendChild(br);}
+
+                var font = document.createElement("font");
+                font.innerHTML = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString();
+                var br = document.createElement("br");
+                if(parseInt(year)<=parseInt(threshold)) {document.getElementById("paper_pre"+threshold).appendChild(font); document.getElementById("paper_pre"+threshold).appendChild(br);}
+                else {document.getElementById("paper"+year).appendChild(font); document.getElementById("paper"+year).appendChild(br);}
+
+                var font = document.createElement("font");
+                var location = doc[i].getElementsByTagName("location").length>0?doc[i].getElementsByTagName("location")[0].childNodes[0].nodeValue.toString()+".":"";
+                var month = doc[i].getElementsByTagName("month").length>0?doc[i].getElementsByTagName("month")[0].childNodes[0].nodeValue.toString():"";
+                var press = doc[i].getElementsByTagName("press").length>0?doc[i].getElementsByTagName("press")[0].childNodes[0].nodeValue.toString()+".":"";
+                font.innerHTML = press+" "+location+" "+month+" "+year;
+                var br = document.createElement("br");
+                if(parseInt(year)<=parseInt(threshold)) {document.getElementById("paper_pre"+threshold).appendChild(font); document.getElementById("paper_pre"+threshold).appendChild(br);}
+                else {document.getElementById("paper"+year).appendChild(font); document.getElementById("paper"+year).appendChild(br);}
+              }
+              align_column();
+            }
+          </script>
+
+          <!--   
+          <p id="id_2015"><b>2015</b></p>
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7308024&newsearch=true&queryText=Proactive%20Demand%20Participation%20of%20Smart%20Buildings%20in%20Smart%20Grid'>
+    		  <b>Proactive Demand Participation of Smart Buildings in Smart Grid</b></a><br>
+              Tianshu Wei*, Qi Zhu and Nanpeng Yu<br>
+              IEEE Transactions on Computers (TC).<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7372606&newsearch=true&queryText=Security%20Analysis%20of%20Proactive%20Participation%20of%20Smart%20Buildings%20in%20Smart%20Grid'>
+    		  <b>Security Analysis of Proactive Participation of Smart Buildings in Smart Grid</a></b><br>
+              Tianshu Wei*, Bowen Zheng*, Qi Zhu and Shiyan Hu<br>
+              34th IEEE/ACM International Conference on Computer-Aided Design (ICCAD'15), Austin, TX, November 2015.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7331368&newsearch=true&queryText=Analysis%20and%20Optimization%20of%20Soft%20Error%20Tolerance%20Strategies%20for%20Real-time%20Systems'>
+    		  <b>Analysis and Optimization of Soft Error Tolerance Strategies for Real-time Systems</a></b><br>
+              Bowen Zheng*, Yue Gao, Qi Zhu and Sandeep Gupta<br>
+              13th IEEE/ACM International Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS'15), Amsterdam, Netherlands, October 2015.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2803174'>
+    		  <b>Security-Aware Design Methodology and Optimization for Automotive Systems</a></b><br>
+              Chung-Wei Lin, Bowen Zheng*, Qi Zhu and Alberto Sangiovanni-Vincentelli<br>
+              to appear in the ACM Transactions on Design Automation of Electronic Systems (TODAES).<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7294278&queryText=From%20Passive%20Demand%20Response%20to%20Proactive%20Demand%20Participation&newsearch=true'>
+    		  <b>From Passive Demand Response to Proactive Demand Participation</a></b><br>
+              Nanpeng Yu, Tianshu Wei* and Qi Zhu<br>
+              11th IEEE International Conference on Automation Science and Engineering (CASE'15), Gothenburg, Sweden, August 2015.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7167280&newsearch=true&queryText=Design%20and%20Verification%20for%20Transportation%20System%20Security'>
+    		  <b>Design and Verification for Transportation System Security</a></b><br>
+              Bowen Zheng, Wenchao Li, Peng Deng, Leonard Gerard, Qi Zhu and Natarajan Shankar <br>
+              to appear in the 52nd ACM/IEEE Design Automation Conference (DAC), June 2015.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7167319&newsearch=true&queryText=Optimal%20Control%20of%20PEVs%20for%20Energy%20Cost%20Minimization%20and%20Frequency%20Regulation%20in%20the%20Smart%20Grid%20Accounting%20for%20Battery%20State-of-Health%20Degradation'>
+    		  <b>Optimal Control of PEVs for Energy Cost Minimization and Frequency Regulation in the Smart Grid Accounting for Battery State-of-Health Degradation</a></b><br>
+              Tiansong Cui, Shuang Chen, Yanzhi Wang, Shahin Nazarian, Qi Zhu and Massoud Pedram<br>
+              to appear in the 52nd ACM/IEEE Design Automation Conference (DAC), June 2015.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2751243'>
+    		  <b>PeerWave: Exploiting Wavefront Parallelism on GPUs with Peer-SM Synchronization</a></b><br>
+              Mehmet Belviranli, Peng Deng, Laxmi Bhuyan, Rajiv Gupta and Qi Zhu<br>
+              to appear in the 29th ACM International Conference on Supercomputing (ICS), June 2015.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2735972'>
+    		  <b>A Model-based Synthesis Flow for Automotive CPS</a></b><br>
+              Peng Deng, Fabio Cremona, Qi Zhu, Marco Di Natale and Haibo Zeng<br>
+              to appear in the 6th ACM/IEEE International Conference on Cyber-Physical Systems (ICCPS), April 2015.<br>
+    		  
+
+
+
+
+
+
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7108440&queryText=Task%20Placement%20and%20Selection%20of%20Data%20Consistency%20Mechanisms%20for%20Real-Time%20Multicore%20Applications&newsearch=true'>
+    		  <b>Task Placement and Selection of Data Consistency Mechanisms for Real-Time Multicore Applications</a></b><br>
+              Zaid Al-Bayati, Youcheng Sun, Haibo Zeng, Marco Di Natale, Qi Zhu and Brett Meyer<br>
+              to appear in the 21st IEEE Real-Time and Embedded Technology and Application Symposium (RTAS), April 2015.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6945804&newsearch=true&queryText=Design%20and%20Operation%20of%20Secure%20Cyber-Physical%20Systems'>
+    		  <b>Design and Operation of Secure Cyber-Physical Systems</a></b><br>
+              Fabio Pasqualetti and Qi Zhu<br>
+              IEEE Embedded Systems Letters, March 2015<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6891169&newsearch=true&queryText=Security-Aware%20Modeling%20and%20Efficient%20Mapping%20for%20CAN-Based%20Real-Time%20Distributed%20Automotive%20Systems'>
+    		  <b>Security-Aware Modeling and Efficient Mapping for CAN-Based Real-Time Distributed Automotive Systems</a></b><br>
+              Chung-Wei Lin, Qi Zhu and Alberto Sangiovanni-Vincentelli<br>
+              IEEE Embedded Systems Letters, March 2015<br></p>
+    		  <hr/>
+
+    		  <p id="id_2014"><b>2014</b></p>
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7001351&newsearch=true&queryText=Co-scheduling%20of%20HVAC%20Control,%20EV%20Charging%20and%20Battery%20Usage%20for%20Building%20Energy%20Efficiency'>
+    		  <b>Co-scheduling of HVAC Control, EV Charging and Battery Usage for Building Energy Efficiency</a></b><br>
+              Tianshu Wei, Qi Zhu and Mehdi Maasoumy<br>
+              33rd IEEE/ACM International Conference on Computer-Aided Design (ICCAD'14), San Jose, CA, November, 2014.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7001388&newsearch=true&queryText=Lifetime%20Optimization%20for%20Real-Time%20Embedded%20Systems%20Considering%20Electromigration%20Effects'>
+    		  <b>Lifetime Optimization for Real-Time Embedded Systems Considering Electromigration Effects</a></b><br>
+              Taeyoung Kim, Bowen Zheng, Hai-Bao Chen, Qi Zhu, Valeriy Sukharev and Sheldon Tan<br>
+              33rd IEEE/ACM International Conference on Computer-Aided Design (ICCAD'14), San Jose, CA, November, 2014.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7001325&newsearch=true&queryText=Security-Aware%20Mapping%20for%20TDMA-Based%20Real-Time%20Distributed%20Systems'>
+    		  <b>Security-Aware Mapping for TDMA-Based Real-Time Distributed Systems</a></b><br>
+              Chung-Wei Lin, Qi Zhu and Alberto Sangiovanni-Vincentelli<br>
+              33rd IEEE/ACM International Conference on Computer-Aided Design (ICCAD'14), San Jose, CA, November, 2014.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6971840&newsearch=true&queryText=Metronomy:%20A%20Function-Architecture%20Co-simulation%20Framework%20for%20Timing%20Verification%20of%20Cyber-Physical%20Systems'>
+    		  <b>Metronomy: A Function-Architecture Co-simulation Framework for Timing Verification of Cyber-Physical Systems</a></b><br>
+              Liangpeng Guo, Qi Zhu, Pierluigi Nuzzo, Roberto Passerone, Alberto Sangiovanni-Vincentelli and Edward Lee<br>
+              12th IEEE/ACM International Conference on Hardware/Software Codesign and System Synthesis (CODES+ISSS'14), New Delhi, India, October, 2014.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6908428&newsearch=true&queryText=Model-based%20Synthesis%20for%20Real-time%20Embedded%20Systems'>
+    		  <b>Model-based Synthesis for Real-time Embedded Systems</a></b><br>
+              Qi Zhu<br>
+              57th IEEE International Midwest Symposium on Circuits and Systems (MWSCAS'14), College Station, TX, August, 2014. (Invited Paper)<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6871195&newsearch=true&queryText=Task%20Synthesis%20for%20Latency-sensitive%20Synchronous%20Block%20Diagram'>
+    		  <b>Task Synthesis for Latency-sensitive Synchronous Block Diagram</a></b><br>
+              Peng Deng, Qi Zhu, Marco Di Natale and Haibo Zeng<br>
+              9th IEEE International Symposium on Industrial Embedded Systems (SIES), Pisa, Italy, June 2014. (Best Paper Award Finalist)<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6881463&newsearch=true&queryText=Battery%20Management%20and%20Application%20for%20Energy-Efficient%20Buildings'>
+    		  <b>Battery Management and Application for Energy-Efficient Buildings</a></b><br>
+              Tianshu Wei, Taeyoung Kim, Sangyoung Park, Qi Zhu, Sheldon X.-D. Tan, Naehyuck Chang, Sadrul Ula, Mehdi Maasoumy<br>
+              51st IEEE/ACM Design Automation Conference (DAC), San Francisco, CA, June 2014.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6843728&newsearch=true&queryText=WiP%20Abstract:%20An%20Efficient%20Control-driven%20Period%20Optimization%20Algorithm%20for%20Distributed%20Real-time%20Systems'>
+    		  <b>WiP Abstract: An Efficient Control-driven Period Optimization Algorithm for Distributed Real-time Systems</a></b><br>
+              Peng Deng, Qi Zhu, Abhijit Davare, Anastasios Mourikis, Xue Liu and Marco Di Natale<br>
+              5th IEEE/ACM International Conference on Cyber-Physical Systems (ICCPS), Work-in-Progress session, Berlin, Germany, April 2014<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2565873'>
+    		  <b>Design Synthesis and Optimization for Automotive Embedded Systems</a></b><br>
+              Qi Zhu and Peng Deng<br>
+              ACM International Symposium on Physical Design (ISPD), Petaluma, CA, March 2014. (Invited Paper)<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6800479&queryText=MSim:%20A%20General%20Cycle%20Accurate%20Simulation%20Platform%20for%20Memcomputing%20Studies&newsearch=true'>
+    		  <b>MSim: A General Cycle Accurate Simulation Platform for Memcomputing Studies</a></b><br>
+              Chun Zhang, Peng Deng, Hui Geng, Jianming Liu, Qi Zhu and Yiyu Shi<br>
+              17th IEEE/ACM Conference on Design, Automation and Test in Europe (DATE), Germany, March 2014.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://www.sciencedirect.com/science/article/pii/S1383762114000198'>
+    		  <b>Optimized Implementation of Synchronous Models on Industrial LTTA Systems</a></b><br>
+              Marco Di Natale, Qi Zhu, Alberto Sangiovanni-Vincentelli and Stavros Tripakis<br>
+              accepted by the Journal of Systems Architecture (JSA)<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2632160'>
+    		  <b>Minimizing Stack and Communication Memory Usage in Real-time Embedded Applications</a></b><br>
+              Haibo Zeng, Marco Di Natale and Qi Zhu<br>
+              accepted by the ACM Transactions on Embedded Computing Systems (TECS)<br></p>
+    		  <hr>
+    		  <p id="id_2013"><b>2013</b></p>
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6691106&queryText=Security-Aware%20Mapping%20for%20CAN-Based%20Real-Time%20Distributed%20Automotive%20Systems&newsearch=true'>
+    		  <b>Security-Aware Mapping for CAN-Based Real-Time Distributed Automotive Systems</a></b><br>
+              Chung-Wei Lin, Qi Zhu, Calvin Phung and Alberto Sangiovanni-Vincentelli<br>
+              32nd IEEE/ACM International Conference on Computer-Aided Design (ICCAD), San Jose, CA, November 2013.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6604000&newsearch=true&queryText=Co-design%20of%20Control%20Algorithm%20and%20Embedded%20Platform%20for%20HVAC%20Systems'>
+    		  <b>Co-design of Control Algorithm and Embedded Platform for HVAC Systems</a></b><br>
+              Mehdi Maasoumy, Qi Zhu, Cheng Li, Forrest Meggers and Alberto Sangiovanni-Vincentelli<br>
+              4th IEEE/ACM International Conference on Cyber-Physical Systems (ICCPS), Philadelphia, USA, April 2013. (Best Paper Award)<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6513718&newsearch=true&queryText=Robust%20and%20Extensible%20Task%20Implementations%20of%20Synchronous%20Finite%20State%20Machines'>
+    		  <b>Robust and Extensible Task Implementations of Synchronous Finite State Machines</a></b><br>
+              Qi Zhu, Peng Deng, Marco Di Natale and Haibo Zeng<br>
+              16th IEEE/ACM Conference on Design, Automation and Test in Europe (DATE), Grenoble, France, March 2013. <br></p>
+    		  <hr>
+    		  <p id="id_2012"><b>2012</b></p>
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2362352'>
+    		  <b>Optimization of Task Allocation and Priority Assignment in Hard Real-Time Distributed Systems</a></b><br>
+              Qi Zhu, Haibo Zeng, Wei Zheng, Marco Di Natale and Alberto Sangiovanni-Vincentelli <br>
+              ACM Transactions on Embedded Computing Systems (TECS), Vol. 11, No. 4, December 2012.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://dl.acm.org/citation.cfm?id=2435245'>
+    		  <b>metroII: A Design Environment for Cyber-Physical Systems</a></b><br>
+              Abhijit Davare, Douglas Densmore, Liangpeng Guo, Roberto Passerone, Alberto Sangiovanni-Vincentelli, Alena Simalatsar and Qi Zhu<br>
+              accepted by the ACM Transactions on Embedded Computing Systems (TECS), Special Issue on Multiprocessor System-on-Chip for Cyber-Physical Systems<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6489571&queryText=Optimizing%20Stack%20Memory%20Requirements%20for%20Real-time%20Embedded%20Applications&newsearch=true'>
+    		  <b>Optimizing Stack Memory Requirements for Real-time Embedded Applications</a></b><br>
+              Haibo Zeng, Marco Di Natale and Qi Zhu<br>
+              17th IEEE International Conference on Emerging Technology & Factory Automation (ETFA'12), Krakow, Poland, September 2012.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6204325&newsearch=true&queryText=Development%20of%20Building%20Automation%20and%20Control%20Systems'>
+    		  <b>Development of Building Automation and Control Systems</a></b><br>
+              Yang Yang, Qi Zhu, Mehdi Maasoumy and Alberto Sangiovanni-Vincentelli<br>
+              IEEE Design & Test of Computers, Special Issue on Green Buildings, July/August 2012.<br></p>
+    		  <hr>
+    		  <p id="id_pre_2011"><b>Before 2011</b></p>
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5702222&newsearch=true&queryText=A%20Design%20Flow%20for%20Building%20Automation%20and%20Control%20Systems'>
+    		  <b>A Design Flow for Building Automation and Control Systems</a></b><br>
+              Yang Yang, Alessandro Pinto, Alberto Sangiovanni-Vincentelli and Qi Zhu<br>
+              31st IEEE Real-Time Systems Symposium (RTSS'10), San Diego, CA, December 2010.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=5535223&newsearch=true&queryText=Optimizing%20the%20Software%20Architecture%20for%20Extensibility%20in%20Hard%20Real-Time%20Distributed%20Systems'>
+    		  <b>Optimizing the Software Architecture for Extensibility in Hard Real-Time Distributed Systems</a></b><br>
+              Qi Zhu, Yang Yang, Marco Di Natale, Eelco Scholte and Alberto Sangiovanni-Vincentelli <br>
+              IEEE Transactions on Industrial Informatics (TII), Vol. 6, No. 4, November 2010.<br></p>
+    		  
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4840588&newsearch=true&queryText=Optimizing%20Extensibility%20in%20Hard%20Real-time%20Distributed%20Systems'> 
+    		  <b>Optimizing Extensibility in Hard Real-time Distributed Systems</a></b><br>
+              Qi Zhu, Yang Yang, Eelco Scholte, Marco Di Natale and Alberto Sangiovanni-Vincentelli <br>
+              15th IEEE Real-Time and Embedded Technology and Applications Symposium (RTAS'09), San Francisco, CA, April 2009.<br></p>
+    		  
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4408301&newsearch=true&queryText=Definition%20of%20Task%20Allocation%20and%20Priority%20Assignment%20in%20Hard%20Real-Time%20Distributed%20Systems'>
+    		  <b>Definition of Task Allocation and Priority Assignment in Hard Real-Time Distributed Systems</a></b><br>
+              Wei Zheng, Qi Zhu, Marco Di Natale and Alberto Sangiovanni-Vincentelli<br>
+              28th IEEE Real-Time Systems Symposium (RTSS'07), Tucson, Arizona, December 2007.<br>
+		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=4261191&newsearch=true&queryText=Period%20Optimization%20for%20Hard%20Real-time%20Distributed%20Automotive%20Systems'>
+    		  <b>Period Optimization for Hard Real-time Distributed Automotive Systems</a></b><br>
+              Abhijit Davare, Qi Zhu, Marco Di Natale, Claudio Pinello, Sri Kanajan and Alberto Sangiovanni-Vincentelli<br>
+              44th IEEE/ACM Design Automation Conference (DAC'07), San Diego, California, June 2007. (Best Paper Award)<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwicv6q9i77KAhXCYiYKHUOvChkQFgggMAA&url=https%3A%2F%2Fchess.eecs.berkeley.edu%2Fpubs%2F228%2FmetroII_dvcon.pdf&usg=AFQjCNHRnwk3MawMpLn0tgw1DMvlLANBRA&sig2=LBW8ZXpOtXGgGejU21zbLA'>
+    		  <b>A Next-Generation Design Framework for Platform-Based Design</a></b><br>
+              Abhijit Davare, Douglas Densmore, Trevor Meyerowitz, Alessandro Pinto, Alberto Sangiovanni-Vincentelli, Guang Yang, Haibo Zeng and Qi Zhu <br>
+              Design and Verification Conference (DVCon'07), San Jose, CA, February 2007.<br></p>
+    		  
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1688794&queryText=SAT%20Sweeping%20with%20Local%20Observability%20Don%27t-Cares&newsearch=true'>
+    		  <b>SAT Sweeping with Local Observability Don't-Cares</a></b><br>
+              Qi Zhu, Nathan Kitchen, Andreas Kuehlmann and Alberto Sangiovanni-Vincentelli <br>
+              43rd IEEE/ACM Design Automation Conference (DAC'06), San Francisco, California, July 2006. (Best Paper Award)<br></p>
+    		  
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1518081&newsearch=true&queryText=JPEG%20Encoding%20on%20the%20Intel%20MXP5800:%20A%20Platform-Based%20Design%20Case%20Study'>
+    		  <b>JPEG Encoding on the Intel MXP5800: A Platform-Based Design Case Study</a></b><br>
+              Abhijit Davare, Qi Zhu, John Moondanos and Alberto Sangiovanni-Vincentelli<br>
+              3rd IEEE Workshop on Embedded Systems for Real-Time Multimedia (ESTIMedia'05), New York Metro Area, September 2005.<br>
+    		  
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1458933&newsearch=true&queryText=Spanning%20Graph-Based%20Nonrectilinear%20Steiner%20Tree%20Algorithms'>
+    		  <b>Spanning Graph-Based Nonrectilinear Steiner Tree Algorithms</a></b><br>
+              Qi Zhu, Hai Zhou, Tong Jing, Xianlong Hong and Yang Yang <br>
+              IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), Vol. 24, No. 7, July 2005.<br></p>
+    		  
+    		  <p align="left" style="padding: 0px 30px; 0px; 30px;">
+    		  <b>Title:&nbsp </b><a target='#' href='http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=1337680&newsearch=true&queryText=Efficient%20Octilinear%20Steiner%20Tree%20Construction%20Based%20on%20Spanning%20Graphs'>
+    		  <b>Efficient Octilinear Steiner Tree Construction Based on Spanning Graphs</a></b><br>
+              Qi Zhu, Hai Zhou, Tong Jing, Xianlong Hong and Yang Yang<br>
+              9th IEEE/ACM Asia and South Pacific Design Automation Conference (ASP-DAC'04), Yokohama, Japan, January 2004.<br></p>
+            -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="topbox">
+  <img src="images/top1.png" alt="top picture" style="height: 100%; width: 100%;">
+</div> 
+<div id="topgradient">
+  <img src="images/gradient1.png" alt="top gradient" style="height: 100%; width: 100%;">
+</div>
+
+<div id="id_trans_box" ></div>
+
+<div>
+  <div id="bottomgradient">
+    <img src="images/gradient2.png" alt="bottom gradient" style="height: 100%; width: 100%;">
+  </div>
+  <div id="bottombox">
+    <div class="row page_wrap" id="id_bottom_wrap">
+      <div class="twelve columns" id="id_bottom_columns">
+        <div class="row" id="id_right">
+          <div class="four columns" id="id_info1"> 
+            <h3><font style="color:white;">Qi Zhu</font></h3>
+            <hr/>
+            <p><font style="color:white;">Assistant Professor of Electrical Engineering<br>University of California, Riverside<br>Department of Electrical and Computer Engineering<br>322 Winston Chung Hall</font></p>
+            <p><font style="color:white;">Phone: 951-827-7701<br>Email: qzhu at ece dot ucr dot edu<br><a href="group.html">Personal Website</a></font></p>
+          </div>
+          <div class="four columns" id="id_info3"> 
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="four columns" id="id_info2"> 
+            <h3><font style="color:white;">Related Links</font></h3>
+            <hr/>
+            <p>
+              <a href="http://www.ucr.edu/" target="new">University of California, Riverside</a><br>
+              <a href="http://www.ece.ucr.edu/" target="new">ECE Department</a><br>
+              <a href="http://library.ucr.edu/" target="new">UCR Library</a><br>
+              <a href="http://campusmap.ucr.edu/imap/index.html" target="new">Maps and Directions</a>
+            </p>
+          </div>
+      
+          <div class="twelve columns" id="id_right1">
+            <ul id="menu3" class="footer_menu horizontal">
+              <li ><a href="index.html"><font color="white">Home</a> | Copyright &copy 2015 The Embedded System Research Group. All rights reserved.</font></li>
+            </ul>
+          </div>
+          <script>$('ul#menu3').nav-bar();</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- end page wrap) -->
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+
+
+<!-- END Masonry -->
+</body>
+</html>

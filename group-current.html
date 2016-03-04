@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+<title>WCH222 | Group</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="stylesheets/foundation.min.css">
+<link rel="stylesheet" href="stylesheets/main.css">
+<link rel="stylesheet" href="stylesheets/app.css">
+<link rel="stylesheet" href="stylesheets/group-current.css">  <!-- define topbox and bottombox property -->
+<script src="javascripts/modernizr.foundation.js"></script>
+<script src="javascripts/group-current.js"></script>  <!-- define menu bar, topbox and bottombox property -->
+<!-- Google fonts -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
+<!-- IE Fix for HTML5 Tags -->
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body onload='resize_bottombox_current()' onresize='resize_bottombox_current()'>
+<div class="row page_wrap">
+  <!-- page wrap -->
+  <div class="twelve columns" id="id_columns">
+    <!-- page wrap -->
+    <div class="row" id="id_top_wrap">
+      <div class="nine columns header_nav" id="id_menubox">
+        <ul id="menu-header" class="nav-bar horizontal">
+          <li id ="menu_home" onmouseOver='mouseOver("menu_home","#CC6666")' onmouseOut='mouseOut("menu_home","#CC9999")'><a style="color:white" href="index.html">Home</a></li>
+          <li class="has-flyout" id ="menu_research" onmouseOver='mouseOver("menu_research","#CC6666")' onmouseOut='mouseOut("menu_research","#CC9999")'> <a style="color:white" href="overview.html">Projects</a><a href="overview.html" class="flyout-toggle"></a>
+            <ul class="flyout">
+              <li class="has-flyout"><a href="researches/synthesis_fault_tolerance.html">Software Synthesis & Fault Tolerance</a></li>
+              <li class="has-flyout"><a href="researches/efficient_building.html">Energy-efficient CPS</a></li>
+              <li class="has-flyout"><a href="researches/cyber_security.html">Cyber Physical Security</a></li>
+              <li class="has-flyout"><a href="researches/computer_vision.html">Computer vision</a></li>
+            </ul>
+          </li>
+          <li id ="menu_publication" onmouseOver='mouseOver("menu_publication","#CC6666")' onmouseOut='mouseOut("menu_publication","#CC9999")'><a style="color:white" href="publication.html">Publication</a></li>
+          <li id ="menu_group" onmouseOver='mouseOver("menu_group","#CC6666")' onmouseOut='mouseOut("menu_group","#CC9999")'><a style="color:white" href="group.html">Group</a></li>
+          <li id ="menu_contact" onmouseOver='mouseOver("menu_contact","#CC6666")' onmouseOut='mouseOut("menu_contact","#CC9999")'><a style="color:white" href="contact.html">Contact</a></li>
+        </ul>
+        <script>$('ul#menu-header').nav-bar();</script>
+      </div>
+      <div class="three columns header_logo" id="id_logobox"> <!-- <img src="images/logo.png" class="hide-for-small" alt=""> --> </div>
+    </div>
+    <!-- END Header -->
+    <div style="clear: both"></div>
+	
+	  <br><br><br><br>
+	  <div class="row hide-for-small">
+      <div class="twelve columns">
+        <div class="heading_dots">
+          <h1 class="heading_supersize"><span class="heading_center_bg">Group of Cyber Physical System Lab</span></h1>
+        </div>
+      </div>
+    </div>
+	  
+    <!-- Lab members navigate -->
+	<div class="row">
+      <div class="nine columns header_nav">
+        <ul id="menu-header" class="nav-bar horizontal">
+          <li ><a href="group.html">Prof. Qi Zhu</a></li>
+          <li style="background-color:lightgrey"><a href="group-current.html">Current Students</a></li>
+          <li ><a href="group-former.html">Alumni</a></li>
+        </ul>
+        <script>$('ul#menu-header').nav-bar();</script>
+      </div>
+  </div>
+
+	<!-- Lab members details -->
+  <!-- Ph.D Students -->
+	<div id="labmem">
+    <div><font style="font-weight: bold">Ph.D Students</font></div>
+    <hr/>
+    <div id="container1"> 
+      <!-- Peng Deng -->
+      <div class='box photo col2'>
+        <div id='nameCardContainer1' class='NameCardContainer'>
+          <div id='nameCard1' class='NameCard'>
+            <div class='front face'><img src='images/labmember/peng.jpg' alt=""></div>
+            <div class='back face'><p><b>Contact:&nbsp  </b>pdeng002@ucr.edu</p><p><a href='http://www.ece.ucr.edu/~pedeng/' target='#'>Peng's Personal Page</a></p></div>
+          </div>
+        </div>
+        <p><font><a href="labmembers/peng.html">Peng Deng</a></font></p>
+      </div> 
+      <!-- Tianshu Wei -->
+      <div class='box photo col2'>
+        <div id='nameCardContainer2' class='NameCardContainer'>
+          <div id='nameCard2' class='NameCard'>
+            <div class='front face'><img src='images/labmember/tianshu.jpg' alt=""></div>
+            <div class='back face'>
+              <p><b>Contact:&nbsp  </b>twei002@ucr.edu</p>
+              <p>Energy-efficient Cyber Physical System</p>
+              <p><a href='http://www.ece.ucr.edu/~twei' target='#'>Tianshu's Personal Page</a></p>
+            </div>
+          </div>
+        </div>
+        <p><font><a href="labmembers/tianshu.html">Tianshu Wei</a></font></p>
+      </div>
+      <!-- Bowen Zheng -->
+      <div class='box photo col2'>
+        <div id='nameCardContainer3' class='NameCardContainer'>
+          <div id='nameCard3' class='NameCard'>
+            <div class='front face'><img src='images/labmember/bowen.jpg' alt=""></div>
+            <div class='back face'><p><b>Contact:&nbsp  </b>bzheng@ece.ucr.edu</p><p><a href='http://www.ece.ucr.edu/~bzheng' target='#'>Bowen's Personal Page</a></p></div>
+          </div>
+        </div>
+        <p><font><a href="labmembers/bowen.html">Bowen Zheng</a></font></p>
+      </div>
+      <!-- Hengyi Liang -->
+      <div class='box photo col2'>
+        <div id='nameCardContainer4' class='NameCardContainer'>
+          <div id='nameCard4' class='NameCard'>
+            <div class='front face'><img src='images/labmember/hengyi.jpg' alt=""></div>
+            <div class='back face'><p><b>Contact:&nbsp  </b>hlian010@ucr.edu </p><p><a href='#' target='#'>Hengyi's Personal Page</a></p></div>
+          </div>
+        </div>
+        <p><font><a href="labmembers/hengyi.html">Hengyi Liang</a></font></p>
+      </div>
+      <!-- Shuyue Lan -->
+      <div class='box photo col2'>
+        <div id='nameCardContainer5' class='NameCardContainer'>
+          <div id='nameCard5' class='NameCard'>
+            <div class='front face'><img src='images/labmember/shuyue.jpg' alt=""></div>
+            <div class='back face'><p><b>Contact:&nbsp  </b>slan001@ucr.edu </p><p><a href='http://www.ece.ucr.edu/~slan/' target='#'>Shuyue's Personal Page</a></p></div>
+          </div>
+        </div>
+        <p><font><a href="labmembers/shuyue.html">Shuyue Lan</a></font></p>
+      </div>
+    </div>
+    
+    <!-- Master Students -->
+    <br><br>
+    <div><font style="font-weight: bold">Master Students</font></div>
+    <hr/>
+    <div id="container2">
+      <div class='box photo col2'> <p><font>Chi-Wei Huang</font></p></div>
+      <div class='box photo col2'> <p><font>Zhuofu Deng</font></p></div>
+      <div class='box photo col2'> <p><font>Beixing Yin</font></p></div>
+      <div class='box photo col2'> <p><font>Yunjian Zhang</font></p></div>
+    </div>
+  
+    <!-- Undergraduate Students -->
+    <br><br>
+    <div><font style="font-weight: bold">Undergraduate Students</font></div>
+      <hr/>
+      <div id="container3">
+        <div class='box photo col2'> <p><font>Mark Asfour</font></p></div>
+        <div class='box photo col2'> <p><font>Stanley Chang</font></p></div>
+      </div>
+      <script>
+      /*
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (xhttp.readyState == 4 && xhttp.status == 200) {
+            myFunction(xhttp);
+            }
+        };
+        xhttp.open("GET","students.xml", true);
+        xhttp.send();
+      
+        var titleName = ["Ph.D.","Master","Undergraduate","Visiting","Post-doctoral"];
+        var titleWeight = [1,2,3,4,5];
+
+        function myComp(p1,p2) {
+          return titleWeight[titleName.indexOf(p1)]>titleWeight[titleName.indexOf(p2)];
+        }
+      
+        function myFunction(xml) {
+          var xmlDoc = xml.responseXML;
+          var doc = xmlDoc.documentElement.childNodes;
+
+          // category
+          var count = 0;
+          titleList = [];
+          for(var i=0;i<doc.length;i++)
+          {
+            if(doc[i].nodeName=="#text" || doc[i].nodeName=="#comment") {continue;}
+            var title = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString();
+            if(titleList.indexOf(title)<0) {titleList[count] = title; count++;}
+          }
+          titleList.sort(myComp);
+          
+          // display category
+          for(var i=0;i<titleList.length;i++)
+          {
+            var font = document.createElement("font");
+            var div = document.createElement("div");
+            font.style = "font-weight: bold"; font.innerHTML = titleList[i]+(titleName.indexOf(titleList[i])<3?" Students":"");
+            div.appendChild(font);
+            var hr = document.createElement("hr");
+            var container = document.createElement("div");
+            container.id = "container"+(i+1).toString();
+            document.getElementById("labmem").appendChild(div)
+            document.getElementById("labmem").appendChild(hr); 
+            document.getElementById("labmem").appendChild(container);
+            var br1 = document.createElement("br"); var br2 = document.createElement("br");
+            document.getElementById("labmem").appendChild(br1); document.getElementById("labmem").appendChild(br2);
+          }
+          
+          
+          // add students
+          var numPhD = 0;
+          for(var i=0;i<doc.length;i++)
+          {
+            if(doc[i].nodeName=="#text" || doc[i].nodeName=="#comment") {continue;}
+            var title = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString();
+            var status = doc[i].getElementsByTagName("title")[0].getAttribute("status");
+            
+            if(status=="alumni") {continue;}
+            if(title==titleName[0]) // PhD students
+            {
+              var div = document.createElement("div"); div.class = "box photo col2";
+              div.style = "margin: 5px; padding: 5px; background: #fff; border: 1px solid #ccc; box-shadow: 3px 3px 5px #888888; font-size: 100%; line-height: 1.4em; float: left; width: 222px;";
+
+              var nameCardContainer = document.createElement("div"); 
+              nameCardContainer.id = "nameCardContainer"+(numPhD+1).toString(); nameCardContainer.class = "NameCardContainer";
+              nameCardContainer.style = "position: relative; z-index: 1; perspective: 500; -webkit-perspective: 500;";
+
+              var nameCard = document.createElement("div"); 
+              nameCard.id = "nameCard"+(numPhD+1).toString(); nameCard.class = "NameCard";
+              nameCard.style = "transform-style: preserve-3d; -webkit-transform-style: preserve-3d; transition: all 0.5s linear;";
+              
+              var front = document.createElement("div"); front.class = "front face"; 
+              front.style = "-webkit-backface-visibility: hidden; backface-visibility: hidden;";
+              var image = document.createElement("img"); 
+              image.src = (doc[i].getElementsByTagName("photo").length>0?doc[i].getElementsByTagName("photo")[0].childNodes[0].nodeValue.toString():"images/prod_thumb.png"); 
+              image.alt = "";
+              front.appendChild(image);
+
+              var back = document.createElement("div"); back.class = "back face"; 
+              back.style = "transform: rotateY(180deg); position: absolute; top: 0%; display: block; box-sizing: border-box; color: white; text-align: center; background-color: #fff; width: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;";
+              var contact = document.createElement("p"); 
+              var b = document.createElement("b"); b.innerHTML = "Contact:&nbsp"; 
+              contact.appendChild(b); contact.innerHTML = (doc[i].getElementsByTagName("email")[0].childNodes.length>0?doc[i].getElementsByTagName("email")[0].childNodes[0].nodeValue.toString():"");
+              
+              var website = document.createElement("p");
+              var a = document.createElement("a"); 
+              a.target = "#"; a.innerHTML = "Personal Website";
+              a.href = (doc[i].getElementsByTagName("website").length>0?doc[i].getElementsByTagName("website")[0].childNodes[0].nodeValue.toString():"#"); 
+              website.appendChild(a);
+              
+              var thesis = document.createElement("p"); 
+              thesis.innerHTML = (doc[i].getElementsByTagName("thesis")[0].childNodes.length>0?doc[i].getElementsByTagName("thesis")[0].childNodes[0].nodeValue.toString():"");
+              back.appendChild(contact); back.appendChild(website); back.appendChild(thesis);
+              nameCard.appendChild(front); nameCard.appendChild(back);
+              nameCardContainer.appendChild(nameCard);
+
+              var name = document.createElement("a"); 
+              name.innerHTML = doc[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.toString(); 
+              name.href = (doc[i].getElementsByTagName("details").length>0?doc[i].getElementsByTagName("details")[0].childNodes[0].nodeValue.toString():"#"); 
+              var p = document.createElement("p"); p.appendChild(name);
+              
+              div.appendChild(nameCardContainer); div.appendChild(name); 
+              document.getElementById("container"+(titleList.indexOf(title)+1).toString()).appendChild(div);
+              numPhD = numPhD + 1; 
+            }
+            else 
+            {
+              
+            }
+          }
+        }*/
+      </script>
+
+
+    </div>
+  </div>
+</div>
+
+<!-- Upper and bottome decoration bars -->
+<div id="topbox">
+    <img src="images/top1.png" alt="top picture" style="height: 100%; width: 100%;">
+</div> 
+<div id="topgradient">
+    <img src="images/gradient1.png" alt="top gradient" style="height: 100%; width: 100%;">
+</div>
+
+<div id="id_trans_box" ></div>
+
+<div>
+  <div id="bottomgradient">
+      <img src="images/gradient2.png" alt="bottom gradient" style="height: 100%; width: 100%;">
+  </div>
+  <div id="bottombox">
+    <div class="row page_wrap" id="id_bottom_wrap">
+      <div class="twelve columns" id="id_bottom_columns">
+        <div class="row" id="id_right">
+          <div class="four columns" id="id_info1"> 
+            <h3><font style="color:white;">Qi Zhu</font></h3>
+            <hr/>
+            <p><font style="color:white;">Assistant Professor of Electrical Engineering<br>University of California, Riverside<br>Department of Electrical and Computer Engineering<br>322 Winston Chung Hall</font></p>
+            <p><font style="color:white;">Phone: 951-827-7701<br>Email: qzhu at ece dot ucr dot edu<br><a href="group.html">Personal Website</a></font></p>
+          </div>
+          <div class="four columns" id="id_info3"> 
+            <h3></h3>
+            <p></p>
+          </div>
+          <div class="four columns" id="id_info2"> 
+            <h3><font style="color:white;">Related Links</font></h3>
+            <hr/>
+            <p>
+              <a href="http://www.ucr.edu/" target="new">University of California, Riverside</a><br>
+              <a href="http://www.ece.ucr.edu/" target="new">ECE Department</a><br>
+              <a href="http://library.ucr.edu/" target="new">UCR Library</a><br>
+              <a href="http://campusmap.ucr.edu/imap/index.html" target="new">Maps and Directions</a>
+            </p>
+          </div>
+      
+          <div class="twelve columns" id="id_right1">
+            <ul id="menu3" class="footer_menu horizontal">
+              <li ><a href="index.html"><font color="white">Home</a> | Copyright &copy 2015 The Embedded System Research Group. All rights reserved.</font></li>
+            </ul>
+          </div>
+          <script>$('ul#menu3').nav-bar();</script>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+<script>
+$(function () {
+    var $container = $('#container1');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+$(function () {
+    var $container = $('#container2');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+$(function () {
+    var $container = $('#container3');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+$(function () {
+    var $container = $('#container4');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+$(function () {
+    var $container = $('#container5');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+</script>
+
+</body>
+</html>
