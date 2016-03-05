@@ -66,87 +66,37 @@
         <script>$('ul#menu-header').nav-bar();</script>
       </div>
     </div>
-	
-	<div id="labmem">
-    
-      <script>
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (xhttp.readyState == 4 && xhttp.status == 200) {
-            myFunction(xhttp);
-            }
-        };
-        xhttp.open("GET","students.xml", true);
-        xhttp.send();
-      
-        var titleName = ["Ph.D.","Master","Undergraduate","Visiting","Post-doctoral"];
-        var titleWeight = [1,2,3,4,5];
-
-        function myComp(p1,p2) {
-          return titleWeight[titleName.indexOf(p1)]>titleWeight[titleName.indexOf(p2)];
-        }
-      
-        function myFunction(xml) {
-          var xmlDoc = xml.responseXML;
-          var doc = xmlDoc.documentElement.childNodes;
-
-          // category
-          var count = 0;
-          titleList = [];
-          for(var i=0;i<doc.length;i++)
-          {
-            if(doc[i].nodeName=="#text" || doc[i].nodeName=="#comment") {continue;}
-            var title = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString();
-            if(titleList.indexOf(title)<0) {titleList[count] = title; count++;}
-          }
-          titleList.sort(myComp);
-          
-          // display category
-          for(var i=0;i<titleList.length;i++)
-          {
-            var font = document.createElement("font");
-            var div = document.createElement("div");
-            font.style = "font-weight: bold"; font.innerHTML = titleList[i]+(titleName.indexOf(titleList[i])<3?" Students":"");
-            div.appendChild(font);
-			var hr_white = document.createElement("hr"); hr_white.style = "border: 1px solid #fff";
-            var hr = document.createElement("hr");
-            var container = document.createElement("div");
-            container.id = "container"+(i+1).toString();
-			document.getElementById("labmem").appendChild(hr_white); 
-            document.getElementById("labmem").appendChild(div)
-            document.getElementById("labmem").appendChild(hr); 		
-            document.getElementById("labmem").appendChild(container);
-            var br1 = document.createElement("br"); var br2 = document.createElement("br");
-            document.getElementById("labmem").appendChild(br1); document.getElementById("labmem").appendChild(br2);
-          }
-		  
-          // add alumni 
-          for(var i=0;i<doc.length;i++)
-          {
-            if(doc[i].nodeName=="#text" || doc[i].nodeName=="#comment") {continue;}
-            var title = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString();
-            var status = doc[i].getElementsByTagName("title")[0].getAttribute("status");
-            
-            if(status=="current") {continue;}
-            
-              var div = document.createElement("div"); div.class = "box photo col2";
-              div.style = "margin: 5px; padding: 5px; background: #fff; border: 1px solid #ccc; box-shadow: 3px 3px 5px #888888; font-size: 100%; line-height: 1.4em; float: left; width: 222px;";
-			  
-              var name = document.createElement("a"); 
-              name.innerHTML = doc[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.toString(); 
-              name.href = (doc[i].getElementsByTagName("details").length>0?doc[i].getElementsByTagName("details")[0].childNodes[0].nodeValue.toString():"#"); 
-              var p = document.createElement("p"); p.appendChild(name); p.style = "border: 0px solid #000; text-align: center; margin: 2px 0px 0px 0px; font-weight: bold; font-size: 80%;";
-              
-              div.appendChild(p); 
-              document.getElementById("container"+(titleList.indexOf(title)+1).toString()).appendChild(div);
-          }
-        }
-      </script>
+    <div><font style="font-weight: bold">Ph.D Students</font></div>
+    <hr/>
+    <div id="container1">
+      <div class='box photo col2'> <p><font>Shu Zhang</font></p> </div>
     </div>
+    
+    <br>
+    <br>
+    <div><font style="font-weight: bold">Master Students</font></div>
+    <hr/>
+    <div id="container2">
+      <div class='box photo col2'> <p><font>Zhonghua Zhou</font></p></div>
+      <div class='box photo col2'> <p><font>Shuheng Li</font></p></div>
+      <div class='box photo col2'> <p><font>Priyanka Khire</font></p></div>
+    </div>
+
+    <br>
+    <br>
+    <div><font style="font-weight: bold">Undergraduate Students</font></div>
+    <hr/>
+    <div id="containe3">
+      <div class='box photo col2'> <p><font>Patrick Smith</font></p></div>
+      <div class='box photo col2'> <p><font>Andrew Olguin</font></p></div>
+      <div class='box photo col2'> <p><font>Ellison Zhu</font></p></div>
+      <div class='box photo col2'> <p><font>Gavin Huang</font></p></div>
+      <div class='box photo col2'> <p><font>Jason Terrado</font></p></div>
+    </div>
+    <!-- end Masonry container -->
   </div>
 </div>
 
-<!-- top and bottom bar -->
 <div id="topbox">
     <img src="images/top1.png" alt="top picture" style="height: 100%; width: 100%;">
 </div> 
@@ -183,7 +133,8 @@
               <a href="http://library.ucr.edu/" target="new">UCR Library</a><br>
               <a href="http://campusmap.ucr.edu/imap/index.html" target="new">Maps and Directions</a>
             </p>
-          </div>     
+          </div>
+      
           <div class="twelve columns" id="id_right1">
             <ul id="menu3" class="footer_menu horizontal">
               <li ><a href="index.html"><font color="white">Home</a> | Copyright &copy 2015 The Embedded System Research Group. All rights reserved.</font></li>
@@ -203,6 +154,28 @@
 <script src="javascripts/app.js"></script>
 <!-- Masonry for galleries -->
 <script src="javascripts/masonry.js"></script>
+<script>
+$(function () {
+    var $container = $('#container1');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+$(function () {
+    var $container = $('#container2');
+    $container.imagesLoaded(function () {
+        $container.masonry({
+            itemSelector: '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+    });
+});
+</script>
 <!-- END Masonry -->
 </body>
 </html>

@@ -72,86 +72,8 @@
 	<!-- Lab members details -->
   <!-- Ph.D Students -->
 	<div id="labmem">
-    <div><font style="font-weight: bold">Ph.D Students</font></div>
-    <hr/>
-    <div id="container1"> 
-      <!-- Peng Deng -->
-      <div class='box photo col2'>
-        <div id='nameCardContainer1' class='NameCardContainer'>
-          <div id='nameCard1' class='NameCard'>
-            <div class='front face'><img src='images/labmember/peng.jpg' alt=""></div>
-            <div class='back face'><p><b>Contact:&nbsp  </b>pdeng002@ucr.edu</p><p><a href='http://www.ece.ucr.edu/~pedeng/' target='#'>Peng's Personal Page</a></p></div>
-          </div>
-        </div>
-        <p><font><a href="labmembers/peng.html">Peng Deng</a></font></p>
-      </div> 
-      <!-- Tianshu Wei -->
-      <div class='box photo col2'>
-        <div id='nameCardContainer2' class='NameCardContainer'>
-          <div id='nameCard2' class='NameCard'>
-            <div class='front face'><img src='images/labmember/tianshu.jpg' alt=""></div>
-            <div class='back face'>
-              <p><b>Contact:&nbsp  </b>twei002@ucr.edu</p>
-              <p>Energy-efficient Cyber Physical System</p>
-              <p><a href='http://www.ece.ucr.edu/~twei' target='#'>Tianshu's Personal Page</a></p>
-            </div>
-          </div>
-        </div>
-        <p><font><a href="labmembers/tianshu.html">Tianshu Wei</a></font></p>
-      </div>
-      <!-- Bowen Zheng -->
-      <div class='box photo col2'>
-        <div id='nameCardContainer3' class='NameCardContainer'>
-          <div id='nameCard3' class='NameCard'>
-            <div class='front face'><img src='images/labmember/bowen.jpg' alt=""></div>
-            <div class='back face'><p><b>Contact:&nbsp  </b>bzheng@ece.ucr.edu</p><p><a href='http://www.ece.ucr.edu/~bzheng' target='#'>Bowen's Personal Page</a></p></div>
-          </div>
-        </div>
-        <p><font><a href="labmembers/bowen.html">Bowen Zheng</a></font></p>
-      </div>
-      <!-- Hengyi Liang -->
-      <div class='box photo col2'>
-        <div id='nameCardContainer4' class='NameCardContainer'>
-          <div id='nameCard4' class='NameCard'>
-            <div class='front face'><img src='images/labmember/hengyi.jpg' alt=""></div>
-            <div class='back face'><p><b>Contact:&nbsp  </b>hlian010@ucr.edu </p><p><a href='#' target='#'>Hengyi's Personal Page</a></p></div>
-          </div>
-        </div>
-        <p><font><a href="labmembers/hengyi.html">Hengyi Liang</a></font></p>
-      </div>
-      <!-- Shuyue Lan -->
-      <div class='box photo col2'>
-        <div id='nameCardContainer5' class='NameCardContainer'>
-          <div id='nameCard5' class='NameCard'>
-            <div class='front face'><img src='images/labmember/shuyue.jpg' alt=""></div>
-            <div class='back face'><p><b>Contact:&nbsp  </b>slan001@ucr.edu </p><p><a href='http://www.ece.ucr.edu/~slan/' target='#'>Shuyue's Personal Page</a></p></div>
-          </div>
-        </div>
-        <p><font><a href="labmembers/shuyue.html">Shuyue Lan</a></font></p>
-      </div>
-    </div>
     
-    <!-- Master Students -->
-    <br><br>
-    <div><font style="font-weight: bold">Master Students</font></div>
-    <hr/>
-    <div id="container2">
-      <div class='box photo col2'> <p><font>Chi-Wei Huang</font></p></div>
-      <div class='box photo col2'> <p><font>Zhuofu Deng</font></p></div>
-      <div class='box photo col2'> <p><font>Beixing Yin</font></p></div>
-      <div class='box photo col2'> <p><font>Yunjian Zhang</font></p></div>
-    </div>
-  
-    <!-- Undergraduate Students -->
-    <br><br>
-    <div><font style="font-weight: bold">Undergraduate Students</font></div>
-      <hr/>
-      <div id="container3">
-        <div class='box photo col2'> <p><font>Mark Asfour</font></p></div>
-        <div class='box photo col2'> <p><font>Stanley Chang</font></p></div>
-      </div>
       <script>
-      /*
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -162,7 +84,7 @@
         xhttp.send();
       
         var titleName = ["Ph.D.","Master","Undergraduate","Visiting","Post-doctoral"];
-        var titleWeight = [1,2,3,4,5];
+        var titleWeight = [1,2,3,4,5]; // the displaying order of different types of personnel
 
         function myComp(p1,p2) {
           return titleWeight[titleName.indexOf(p1)]>titleWeight[titleName.indexOf(p2)];
@@ -190,17 +112,18 @@
             var div = document.createElement("div");
             font.style = "font-weight: bold"; font.innerHTML = titleList[i]+(titleName.indexOf(titleList[i])<3?" Students":"");
             div.appendChild(font);
+			var hr_white = document.createElement("hr"); hr_white.style = "border: 1px solid #fff";
             var hr = document.createElement("hr");
             var container = document.createElement("div");
             container.id = "container"+(i+1).toString();
+			document.getElementById("labmem").appendChild(hr_white); 
             document.getElementById("labmem").appendChild(div)
-            document.getElementById("labmem").appendChild(hr); 
+            document.getElementById("labmem").appendChild(hr); 		
             document.getElementById("labmem").appendChild(container);
             var br1 = document.createElement("br"); var br2 = document.createElement("br");
             document.getElementById("labmem").appendChild(br1); document.getElementById("labmem").appendChild(br2);
           }
-          
-          
+		  
           // add students
           var numPhD = 0;
           for(var i=0;i<doc.length;i++)
@@ -214,55 +137,40 @@
             {
               var div = document.createElement("div"); div.class = "box photo col2";
               div.style = "margin: 5px; padding: 5px; background: #fff; border: 1px solid #ccc; box-shadow: 3px 3px 5px #888888; font-size: 100%; line-height: 1.4em; float: left; width: 222px;";
-
-              var nameCardContainer = document.createElement("div"); 
-              nameCardContainer.id = "nameCardContainer"+(numPhD+1).toString(); nameCardContainer.class = "NameCardContainer";
-              nameCardContainer.style = "position: relative; z-index: 1; perspective: 500; -webkit-perspective: 500;";
-
-              var nameCard = document.createElement("div"); 
-              nameCard.id = "nameCard"+(numPhD+1).toString(); nameCard.class = "NameCard";
-              nameCard.style = "transform-style: preserve-3d; -webkit-transform-style: preserve-3d; transition: all 0.5s linear;";
-              
-              var front = document.createElement("div"); front.class = "front face"; 
-              front.style = "-webkit-backface-visibility: hidden; backface-visibility: hidden;";
+			  
               var image = document.createElement("img"); 
               image.src = (doc[i].getElementsByTagName("photo").length>0?doc[i].getElementsByTagName("photo")[0].childNodes[0].nodeValue.toString():"images/prod_thumb.png"); 
+			  image.width = 210; // the size ratio of the portrait has to be 145:180
+			  image.height = 169;
               image.alt = "";
-              front.appendChild(image);
-
-              var back = document.createElement("div"); back.class = "back face"; 
-              back.style = "transform: rotateY(180deg); position: absolute; top: 0%; display: block; box-sizing: border-box; color: white; text-align: center; background-color: #fff; width: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;";
-              var contact = document.createElement("p"); 
-              var b = document.createElement("b"); b.innerHTML = "Contact:&nbsp"; 
-              contact.appendChild(b); contact.innerHTML = (doc[i].getElementsByTagName("email")[0].childNodes.length>0?doc[i].getElementsByTagName("email")[0].childNodes[0].nodeValue.toString():"");
-              
-              var website = document.createElement("p");
-              var a = document.createElement("a"); 
-              a.target = "#"; a.innerHTML = "Personal Website";
-              a.href = (doc[i].getElementsByTagName("website").length>0?doc[i].getElementsByTagName("website")[0].childNodes[0].nodeValue.toString():"#"); 
-              website.appendChild(a);
-              
-              var thesis = document.createElement("p"); 
-              thesis.innerHTML = (doc[i].getElementsByTagName("thesis")[0].childNodes.length>0?doc[i].getElementsByTagName("thesis")[0].childNodes[0].nodeValue.toString():"");
-              back.appendChild(contact); back.appendChild(website); back.appendChild(thesis);
-              nameCard.appendChild(front); nameCard.appendChild(back);
-              nameCardContainer.appendChild(nameCard);
 
               var name = document.createElement("a"); 
               name.innerHTML = doc[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.toString(); 
               name.href = (doc[i].getElementsByTagName("details").length>0?doc[i].getElementsByTagName("details")[0].childNodes[0].nodeValue.toString():"#"); 
-              var p = document.createElement("p"); p.appendChild(name);
+              var p = document.createElement("p"); p.appendChild(name); p.style = "border: 0px solid #000; text-align: center; margin: 2px 0px 0px 0px; font-weight: bold; font-size: 80%;";
               
-              div.appendChild(nameCardContainer); div.appendChild(name); 
+              div.appendChild(image); div.appendChild(p); 
               document.getElementById("container"+(titleList.indexOf(title)+1).toString()).appendChild(div);
+			  
               numPhD = numPhD + 1; 
             }
-            else 
+            else // Mater students, Undergraduate students, Visiting scholars, Post-doctoral
             {
+              var div = document.createElement("div"); div.class = "box photo col2";
+              div.style = "margin: 5px; padding: 5px; background: #fff; border: 1px solid #ccc; box-shadow: 3px 3px 5px #888888; font-size: 100%; line-height: 1.4em; float: left; width: 222px;";
+			  
+              var name = document.createElement("a"); 
+              name.innerHTML = doc[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.toString(); 
+              name.href = (doc[i].getElementsByTagName("details").length>0?doc[i].getElementsByTagName("details")[0].childNodes[0].nodeValue.toString():"#"); 
+              var p = document.createElement("p"); p.appendChild(name); p.style = "border: 0px solid #000; text-align: center; margin: 2px 0px 0px 0px; font-weight: bold; font-size: 80%;";
               
+              div.appendChild(p); 
+              document.getElementById("container"+(titleList.indexOf(title)+1).toString()).appendChild(div);
             }
           }
-        }*/
+		  
+		  
+        }
       </script>
 
 

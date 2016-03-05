@@ -13,12 +13,24 @@
 <link rel="stylesheet" href="stylesheets/group-current.css">  <!-- define topbox and bottombox property -->
 <script src="javascripts/modernizr.foundation.js"></script>
 <script src="javascripts/group-current.js"></script>  <!-- define menu bar, topbox and bottombox property -->
+
+<!-- Included JS Files (Compressed) -->
+<script src="javascripts/foundation.min.js"></script>
+<!-- Initialize JS Plugins -->
+<script src="javascripts/app.js"></script>
+<!-- Masonry for galleries -->
+<script src="javascripts/masonry.js"></script>
+
 <!-- Google fonts -->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Playfair+Display:400italic' rel='stylesheet' type='text/css' />
 <!-- IE Fix for HTML5 Tags -->
 <!--[if lt IE 9]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
 </head>
 <body onload='resize_bottombox_current()' onresize='resize_bottombox_current()'>
 <div class="row page_wrap">
@@ -45,31 +57,35 @@
       </div>
       <div class="three columns header_logo" id="id_logobox"> <!-- <img src="images/logo.png" class="hide-for-small" alt=""> --> </div>
     </div>
-  
+    <!-- END Header -->
     <div style="clear: both"></div>
-    <div><br><br><br><br></div>
-    <div class="row hide-for-small">
+	
+	  <br><br><br><br>
+	  <div class="row hide-for-small">
       <div class="twelve columns">
         <div class="heading_dots">
-          <h1 class="heading_supersize"><span class="heading_center_bg">Research of Cyber Physical System Lab</span></h1>
+          <h1 class="heading_supersize"><span class="heading_center_bg">Group of Cyber Physical System Lab</span></h1>
         </div>
       </div>
     </div>
-	
+	  
+    <!-- Lab members navigate -->
 	<div class="row">
       <div class="nine columns header_nav">
         <ul id="menu-header" class="nav-bar horizontal">
           <li ><a href="group.html">Prof. Qi Zhu</a></li>
-          <li ><a href="group-current.html">Current Students</a></li>
-          <li style="background-color:lightgrey"><a href="group-former.html">Alumni</a></li>
+          <li style="background-color:lightgrey"><a href="group-current.html">Current Students</a></li>
+          <li ><a href="group-former.html">Alumni</a></li>
         </ul>
         <script>$('ul#menu-header').nav-bar();</script>
       </div>
-    </div>
-	
+  </div>
+
+	<!-- Lab members details -->
 	<div id="labmem">
-    
-      <script>
+     
+    <script>
+      
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function() {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -120,15 +136,64 @@
             document.getElementById("labmem").appendChild(br1); document.getElementById("labmem").appendChild(br2);
           }
 		  
-          // add alumni 
+          // add students
+          var numPhD = 0;
           for(var i=0;i<doc.length;i++)
           {
             if(doc[i].nodeName=="#text" || doc[i].nodeName=="#comment") {continue;}
             var title = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString();
             var status = doc[i].getElementsByTagName("title")[0].getAttribute("status");
             
-            if(status=="current") {continue;}
-            
+            if(status=="alumni") {continue;}
+            if(title==titleName[0]) // PhD students
+            {
+              var div = document.createElement("div"); div.class = "box photo col2";
+              div.style = "margin: 5px; padding: 5px; background: #fff; border: 1px solid #ccc; box-shadow: 3px 3px 5px #888888; font-size: 100%; line-height: 1.4em; float: left; width: 222px;";
+
+              var nameCardContainer = document.createElement("div"); 
+              nameCardContainer.id = "nameCardContainer"+(numPhD+1).toString(); nameCardContainer.class = "NameCardContainer";
+              nameCardContainer.style = "position: relative; z-index: 1; perspective: 500; -webkit-perspective: 500;";
+			  
+              var nameCard = document.createElement("div"); 
+              nameCard.id = "nameCard"+(numPhD+1).toString(); nameCard.class = "NameCard";
+              nameCard.style = "transform-style: preserve-3d; -webkit-transform-style: preserve-3d; transition: all 0.5s linear;";
+              
+              var front = document.createElement("div"); front.class = "front"; 
+              front.style = "-webkit-backface-visibility: hidden; backface-visibility: hidden;";
+              var image = document.createElement("img"); 
+              image.src = (doc[i].getElementsByTagName("photo").length>0?doc[i].getElementsByTagName("photo")[0].childNodes[0].nodeValue.toString():"images/prod_thumb.png"); 
+              image.alt = "";
+			  image.width = 210; // the size ratio of the portrait has to be 145:180
+			  image.height = 169;
+              front.appendChild(image);
+
+              var back = document.createElement("div"); back.class = "back"; 
+              back.style = "-webkit-transform: rotateY(180deg); transform: rotateY(180deg); position: absolute; top: 0%; display: block; box-sizing: border-box; color: white; text-align: center; background-color: #fff; width: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden;";
+              
+			  var contact = document.createElement("p"); 
+              var b = document.createElement("b"); b.innerHTML = "Contact:&nbsp"; 
+              contact.appendChild(b); contact.innerHTML = (doc[i].getElementsByTagName("email")[0].childNodes.length>0?doc[i].getElementsByTagName("email")[0].childNodes[0].nodeValue.toString():"");
+              			  
+              var thesis = document.createElement("p"); 
+              thesis.innerHTML = (doc[i].getElementsByTagName("thesis")[0].childNodes.length>0?doc[i].getElementsByTagName("thesis")[0].childNodes[0].nodeValue.toString():"");
+              back.appendChild(contact); back.appendChild(thesis); //back.appendChild(website); 
+              nameCard.appendChild(front); nameCard.appendChild(back);
+              nameCardContainer.appendChild(nameCard);
+			  
+              var name = document.createElement("a"); 
+              name.innerHTML = doc[i].getElementsByTagName("name")[0].childNodes[0].nodeValue.toString(); 
+              name.href = (doc[i].getElementsByTagName("details").length>0?doc[i].getElementsByTagName("details")[0].childNodes[0].nodeValue.toString():"#"); 
+              var p = document.createElement("p"); p.appendChild(name); p.style = "border: 0px solid #000; text-align: center; margin: 6px 0px 0px 0px; font-weight: bold; font-size: 80%;";
+              
+			  
+			  
+              div.appendChild(nameCardContainer); div.appendChild(p); 
+              document.getElementById("container"+(titleList.indexOf(title)+1).toString()).appendChild(div);
+			  
+              numPhD = numPhD + 1; 
+            }
+            else 
+            {
               var div = document.createElement("div"); div.class = "box photo col2";
               div.style = "margin: 5px; padding: 5px; background: #fff; border: 1px solid #ccc; box-shadow: 3px 3px 5px #888888; font-size: 100%; line-height: 1.4em; float: left; width: 222px;";
 			  
@@ -139,14 +204,18 @@
               
               div.appendChild(p); 
               document.getElementById("container"+(titleList.indexOf(title)+1).toString()).appendChild(div);
+            }
           }
+		  
+		  
         }
+		
       </script>
     </div>
   </div>
 </div>
 
-<!-- top and bottom bar -->
+<!-- Upper and bottome decoration bars -->
 <div id="topbox">
     <img src="images/top1.png" alt="top picture" style="height: 100%; width: 100%;">
 </div> 
@@ -183,7 +252,8 @@
               <a href="http://library.ucr.edu/" target="new">UCR Library</a><br>
               <a href="http://campusmap.ucr.edu/imap/index.html" target="new">Maps and Directions</a>
             </p>
-          </div>     
+          </div>
+      
           <div class="twelve columns" id="id_right1">
             <ul id="menu3" class="footer_menu horizontal">
               <li ><a href="index.html"><font color="white">Home</a> | Copyright &copy 2015 The Embedded System Research Group. All rights reserved.</font></li>
@@ -196,13 +266,6 @@
   </div>
 </div>
 
-<!-- end page wrap) -->
-<!-- Included JS Files (Compressed) -->
-<script src="javascripts/foundation.min.js"></script>
-<!-- Initialize JS Plugins -->
-<script src="javascripts/app.js"></script>
-<!-- Masonry for galleries -->
-<script src="javascripts/masonry.js"></script>
-<!-- END Masonry -->
+
 </body>
 </html>

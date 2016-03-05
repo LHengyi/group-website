@@ -4,7 +4,7 @@
 <!--[if IE 8]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-<title>Europe | Blog Single</title>
+<title>WCH222 | Tianshu Wei</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <link rel="stylesheet" href="../stylesheets/foundation.min.css">
@@ -59,8 +59,82 @@
           <!-- personal description starts here -->
           <!-- <img src="../images/demo2_small.jpg" alt="" style="width:100%"> -->
           <p>
-
+			<b>Contact:</b><br>
+			<b>E-mail:</b> twei002@ucr.edu<br>
+			<b>LinkedIn:</b> <a target='#' href='https://www.linkedin.com/nhome/?trk=nav_responsive_tab_home'>link</a><br>
+			<b>Website:</b> <a target='#' href='http://www.ee.ucr.edu/~twei/home.html'>link</a><br>
+			<b>Lab:</b> Winston Chung Hall 222<br>
+		  </p>
+		  <p>
+		    <b>Bio:</b><br>
+			Tianshu Wei is a Ph.D. Candidate in the Department of Electrical and Computer Engineering at University of California, Riverside, CA, USA. He received a Bachelor degree of Electrical Engineering from Nanjing University, China in 2013. His current research interestes are in energy efficient cyber-physical systems, with a focus on smart buildings and smart gird. 
           </p>
+		  <p>
+			My current work focus on Building Energy Efficiency. I establish mathematical models for various types of energy loads(like HVAC system, storage battery, solar supply, etc.) in commercial buildings and design algorithms to optimize the energy schedule inside the building to achieve significant reduction in building energy consumption cost, and meanwhile meets all requirement of the commercial building(like temperature range, electricity draw capacity, etc.).
+		  </p>
+		  
+		  <p>
+			<b>Projects:</b><br>
+			<div class="blog_post">
+			  <li><a href='../researches/efficient_building.html'>Energy Efficient Cyber-physical System</a></li>
+			</div>
+		  </p>
+		  
+		  <p>
+			<b>Publication:</b>
+		    <div class="blog_post" id="publication">
+    	  
+              <script>
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                      if (xhttp.readyState == 4 && xhttp.status == 200) {
+                      myFunction(xhttp);
+                      }
+                  };
+                  xhttp.open("GET","../publication.xml", true);
+                  xhttp.send();
+				  var myName = 'Tianshu Wei';
+				  
+				  // list out the papers of a specific author
+                  function myFunction(xml) {
+                      var xmlDoc = xml.responseXML;
+                      var doc = xmlDoc.documentElement.childNodes;
+
+                      // add papers
+                      for(var i=0;i<doc.length;i++)
+                      {
+                        if(doc[i].nodeName=="#text") {continue;}
+                        var year = doc[i].getElementsByTagName("year")[0].childNodes[0].nodeValue.toString();
+                        // add papers
+                        var li = document.createElement("li");
+
+						var authors = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString();
+						if(!authors.includes(myName)) {continue;}	
+						
+                        var font = document.createElement("font");
+                        font.innerHTML = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString()+". ";
+                        var br = document.createElement("br");
+                        li.appendChild(font);
+
+                        var a = document.createElement("a");
+                        a.target ="#"; a.href = doc[i].getElementsByTagName("source").length>0?doc[i].getElementsByTagName("source")[0].childNodes[0].nodeValue.toString():"#";
+                        a.innerHTML = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString()+". ";                       
+						li.appendChild(a);
+                  
+                        var font = document.createElement("font");
+                        var location = doc[i].getElementsByTagName("location").length>0?doc[i].getElementsByTagName("location")[0].childNodes[0].nodeValue.toString()+".":"";
+                        var month = doc[i].getElementsByTagName("month").length>0?doc[i].getElementsByTagName("month")[0].childNodes[0].nodeValue.toString():"";
+                        var press = doc[i].getElementsByTagName("press").length>0?doc[i].getElementsByTagName("press")[0].childNodes[0].nodeValue.toString()+".":"";
+                        font.innerHTML = press+" "+location+" "+month+" "+year;
+                        var br = document.createElement("br");
+                        li.appendChild(font); li.appendChild(br);
+
+                        document.getElementById("publication").appendChild(li);
+                      }
+                  }
+                </script>
+            </div>
+		  </p>
           <!-- personal description ends here -->
 
         </div>
