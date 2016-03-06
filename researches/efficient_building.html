@@ -55,40 +55,100 @@
         </div>
       </div>
     </div>
-	
-	<!--<div class="cols-4" style="padding-top: 25px;">
-      <div class="pricing_box large radius-left" id="id_topics">
-        <div class="header"><span>Topics</span></div>
-        <ul>
-          <li class="even research"><strong class="yes"><a href="software_synthesis.html">Embedded software synthesis</a></strong></li>
-          <li class="odd research" style="background-color:lightgrey"><strong class="no"><a href="efficient_building.html">Energy-efficient buildings</a></strong></li>
-          <li class="even research"><strong class="no"><a href="#">CPS security</a></strong></li>
-          <li class="odd research"><strong class="yes"><a href="fault_tolerance.html">Fault tolerance design</a></strong></li>
-          <li class="even research"><strong class="yes"><a href="computer_vision.html">Computer vision</a></strong></li>
-        </ul>
-      </div>
-    </div>-->
-	
+
 	<div class="cols-6" style="padding-top: 0px;">
 	  <div class="pricing_box large radius-right" id="id_descriptions">
       <div class="header"><span>Research</span></div>
-		    <div class="blog_post">
+		<div class="blog_post">
           <!-- Begin Blog Post -->
           <div class="heading_dots_grey">
             <h3><span class="heading_bg">&nbsp Energy-efficient Cyber Physical System</span></h3>
-          </div>          
+          </div>       
         </div>
+		
+		<!-- description starts here -->
+        <div class="blog_post" style='text-align:left'> 
+		  <p>
+		    <b>Motivation:</b><br>
+			<div class="blog_post" style='font-size:12pt;font-family: "Times New Roman", Georgia, Serif;'>Buildings account for nearly 40% of the total energy consumption in the United States. As a critical step toward smart cities,
+it is essential to intelligently manage and coordinate the building operations to improve the efficiency and reliability of overall energy
+system. With the advent of smart meters and two-way communication systems, various energy consumptions from smart buildings can
+now be coordinated across the smart grid together with other energy loads and power plants. We propose a
+comprehensive framework to integrate the operations of smart buildings into the energy scheduling of bulk power system through
+proactive building demand participation. This new scheme enables buildings to proactively express and communicate their energy
+consumption preferences to smart grid operators rather than passively receive and react to market signals and instructions such as
+time varying electricity prices. 
+			</div>   
+		  </p>
+		  
+		  <p>
+		    <b>System Framework:</b><br>
+			<div class="blog_post" style='font-size:12pt;font-family: "Times New Roman", Georgia, Serif;'>
+			  <img src="../images/System Architecture.png" alt="system framework" style="width:500px;">
+			</div>   
+		  </p>
+		  
+		  <p>
+			<b>Related Publication:</b>
+		    <div class="blog_post" id="publication">
+              <script>
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                      if (xhttp.readyState == 4 && xhttp.status == 200) {
+                      myFunction(xhttp);
+                      }
+                  };
+                  xhttp.open("GET","../publication.xml", true);
+                  xhttp.send();
+				  var myName = ['Tianshu Wei'];
+				  
+				  // list out the papers of a specific author
+                  function myFunction(xml) {
+                      var xmlDoc = xml.responseXML;
+                      var doc = xmlDoc.documentElement.childNodes;
 
-        <!-- description starts here -->
-        <div>
-        <!-- <img src="images/demo2_small.jpg" alt="" style="width:100%"> -->
+                      // add papers
+                      for(var i=0;i<doc.length;i++)
+                      {
+                        if(doc[i].nodeName=="#text") {continue;}
+                        var year = doc[i].getElementsByTagName("year")[0].childNodes[0].nodeValue.toString();
+                        // add papers
+                        var li = document.createElement("li");
 
+						var authors = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString();
+						var flag = 0;
+						for(;flag<myName.length;flag++) {if(authors.includes(myName[flag])) break;}
+						if(flag==myName.length) continue;	
+						
+                        var font = document.createElement("font");
+                        font.innerHTML = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString()+". ";
+                        var br = document.createElement("br");
+                        li.appendChild(font);
+
+                        var a = document.createElement("a");
+                        a.target ="#"; a.href = doc[i].getElementsByTagName("source").length>0?doc[i].getElementsByTagName("source")[0].childNodes[0].nodeValue.toString():"#";
+                        a.innerHTML = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString()+". ";                       
+						li.appendChild(a);
+                  
+                        var font = document.createElement("font");
+                        var location = doc[i].getElementsByTagName("location").length>0?doc[i].getElementsByTagName("location")[0].childNodes[0].nodeValue.toString()+".":"";
+                        var month = doc[i].getElementsByTagName("month").length>0?doc[i].getElementsByTagName("month")[0].childNodes[0].nodeValue.toString():"";
+                        var press = doc[i].getElementsByTagName("press").length>0?doc[i].getElementsByTagName("press")[0].childNodes[0].nodeValue.toString()+".":"";
+                        font.innerHTML = press+" "+location+" "+month+" "+year;
+                        var br = document.createElement("br");
+                        li.appendChild(font); li.appendChild(br);
+
+                        document.getElementById("publication").appendChild(li);
+                      }
+                  }
+              </script>
+            </div>
+		  </p>
         </div>
         <!-- description ends here -->
-
+      </div>
     </div>
   </div>
-</div>
   <!-- end page wrap) -->
 </div>
 

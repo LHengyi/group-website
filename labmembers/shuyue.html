@@ -57,10 +57,80 @@
           </div>
           
           <!-- personal description starts here -->
-          <!-- <img src="../images/demo2_small.jpg" alt="" style="width:100%"> -->
           <p>
+			<b>Contact:</b><br>
+			<div class="blog_post" style='text-align:left'>
+			  E-mail: <br>
+			  LinkedIn: <a target='#' href=''>link</a><br>
+			  Website: <a target='#' href=''>link</a><br>
+			  Lab location: Winston Chung Hall 222<br>
+			</div>
+		  </p>
+		  
+		  <p>
+			<b>Caption:</b><br>
+			<div class="blog_post" style='text-align:left'>
+			  Content
+			</div>
+		  </p>
 
-          </p>
+		  <p>
+			<b>Publication:</b>
+		    <div class="blog_post" id="publication">
+    	  
+              <script>
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                      if (xhttp.readyState == 4 && xhttp.status == 200) {
+                      myFunction(xhttp);
+                      }
+                  };
+                  xhttp.open("GET","../publication.xml", true);
+                  xhttp.send();
+				  var myName = ['Shuyue Lan'];
+				  
+				  // list out the papers of a specific author
+                  function myFunction(xml) {
+                      var xmlDoc = xml.responseXML;
+                      var doc = xmlDoc.documentElement.childNodes;
+
+                      // add papers
+                      for(var i=0;i<doc.length;i++)
+                      {
+                        if(doc[i].nodeName=="#text") {continue;}
+                        var year = doc[i].getElementsByTagName("year")[0].childNodes[0].nodeValue.toString();
+                        // add papers
+                        var li = document.createElement("li");
+
+						var authors = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString();
+						var flag = 0;
+						for(;flag<myName.length;flag++) {if(authors.includes(myName[flag])) break;}
+						if(flag==myName.length) continue;
+						
+                        var font = document.createElement("font");
+                        font.innerHTML = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString()+". ";
+                        var br = document.createElement("br");
+                        li.appendChild(font);
+
+                        var a = document.createElement("a");
+                        a.target ="#"; a.href = doc[i].getElementsByTagName("source").length>0?doc[i].getElementsByTagName("source")[0].childNodes[0].nodeValue.toString():"#";
+                        a.innerHTML = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString()+". ";                       
+						li.appendChild(a);
+                  
+                        var font = document.createElement("font");
+                        var location = doc[i].getElementsByTagName("location").length>0?doc[i].getElementsByTagName("location")[0].childNodes[0].nodeValue.toString()+".":"";
+                        var month = doc[i].getElementsByTagName("month").length>0?doc[i].getElementsByTagName("month")[0].childNodes[0].nodeValue.toString():"";
+                        var press = doc[i].getElementsByTagName("press").length>0?doc[i].getElementsByTagName("press")[0].childNodes[0].nodeValue.toString()+".":"";
+                        font.innerHTML = press+" "+location+" "+month+" "+year;
+                        var br = document.createElement("br");
+                        li.appendChild(font); li.appendChild(br);
+
+                        document.getElementById("publication").appendChild(li);
+                      }
+                  }
+                </script>
+            </div>
+		  </p>
           <!-- personal description ends here -->
 
         </div>

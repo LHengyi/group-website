@@ -20,6 +20,13 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 </head>
+
+<style>
+  a:hover{
+  text-decoration: underline;
+  }
+</style>
+
 <body>
 <div class="row page_wrap">
   <!-- page wrap -->
@@ -60,17 +67,35 @@
           <!-- <img src="../images/demo2_small.jpg" alt="" style="width:100%"> -->
           <p>
 			<b>Contact:</b><br>
-			<b>E-mail:</b> twei002@ucr.edu<br>
-			<b>LinkedIn:</b> <a target='#' href='https://www.linkedin.com/nhome/?trk=nav_responsive_tab_home'>link</a><br>
-			<b>Website:</b> <a target='#' href='http://www.ee.ucr.edu/~twei/home.html'>link</a><br>
-			<b>Lab:</b> Winston Chung Hall 222<br>
+			<div class="blog_post" style='text-align:left'>
+			  E-mail: twei002@ucr.edu<br>
+			  LinkedIn: <a target='#' href='https://www.linkedin.com/nhome/?trk=nav_responsive_tab_home'>link</a><br>
+			  Website: <a target='#' href='http://www.ee.ucr.edu/~twei/home.html'>link</a><br>
+			  Lab location: Winston Chung Hall 222<br>
+			</div>
 		  </p>
+		  
+		  <p>
+			<b>Education:</b><br>
+			<div class="blog_post" style='text-align:left'>
+			  September, 2009 - June, 2013: <a target='#' href='http://www.nju.edu.cn/english/'>Nanjing University</a>, China<br>
+			  Bachelor Degree in Control and Automation, Department of Electrical and Engineering<br>
+			  <br>
+			  September, 2013 - Present: <a target='#' href='http://www.ucr.edu/'>University of California, Riverside</a><br>
+			  Ph.D. Candidate, Department of Electrical and Computer Engineering<br>
+			  <br>
+			  <a target='#' href='http://www.ee.ucr.edu/~twei/cv.html'>Curriculum Vitae</a>
+			</div>
+		  </p>
+		  
 		  <p>
 		    <b>Bio:</b><br>
+			<div class="blog_post" style='text-align:left'>
 			Tianshu Wei is a Ph.D. Candidate in the Department of Electrical and Computer Engineering at University of California, Riverside, CA, USA. He received a Bachelor degree of Electrical Engineering from Nanjing University, China in 2013. His current research interestes are in energy efficient cyber-physical systems, with a focus on smart buildings and smart gird. 
-          </p>
-		  <p>
+            </div><br>
+			<div class="blog_post" style='text-align:left'>
 			My current work focus on Building Energy Efficiency. I establish mathematical models for various types of energy loads(like HVAC system, storage battery, solar supply, etc.) in commercial buildings and design algorithms to optimize the energy schedule inside the building to achieve significant reduction in building energy consumption cost, and meanwhile meets all requirement of the commercial building(like temperature range, electricity draw capacity, etc.).
+            </div>
 		  </p>
 		  
 		  <p>
@@ -93,7 +118,7 @@
                   };
                   xhttp.open("GET","../publication.xml", true);
                   xhttp.send();
-				  var myName = 'Tianshu Wei';
+				  var myName = ['Tianshu Wei'];
 				  
 				  // list out the papers of a specific author
                   function myFunction(xml) {
@@ -109,7 +134,9 @@
                         var li = document.createElement("li");
 
 						var authors = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString();
-						if(!authors.includes(myName)) {continue;}	
+						var flag = 0;
+						for(;flag<myName.length;flag++) {if(authors.includes(myName[flag])) break;}
+						if(flag==myName.length) continue;	
 						
                         var font = document.createElement("font");
                         font.innerHTML = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString()+". ";

@@ -56,33 +56,87 @@
       </div>
     </div>
 	
-	<!--<div class="cols-4" style="padding-top: 25px;">
-      <div class="pricing_box large radius-left" id="id_topics">
-        <div class="header"><span>Topics</span></div>
-        <ul>
-          <li class="even research"><strong class="yes"><a href="software_synthesis.html">Embedded software synthesis</a></strong></li>
-          <li class="odd research"><strong class="no"><a href="efficient_building.html">Energy-efficient buildings</a></strong></li>
-          <li class="even research"><strong class="no"><a href="#">CPS security</a></strong></li>
-          <li class="odd research"><strong class="yes"><a href="fault_tolerance.html">Fault tolerance design</a></strong></li>
-          <li class="even research" style="background-color:lightgrey"><strong class="yes"><a href="computer_vision.html">Computer vision</a></strong></li>
-        </ul>
-      </div>
-    </div>-->
-	
 	<div class="cols-6" style="padding-top: 0px;">
 	  <div class="pricing_box large radius-right" id="id_descriptions">
       <div class="header"><span>Research</span></div>
-		    <div class="blog_post">
+		<div class="blog_post">
           <!-- Begin Blog Post -->
           <div class="heading_dots_grey">
             <h3><span class="heading_bg">&nbsp Computer Vision</span></h3>
           </div>          
         </div>
+        
+		<!-- description starts here -->
+        <div class="blog_post" style='text-align:left'> 
+		  <p>
+		    <b>Caption:</b><br>
+			<div class="blog_post" style='font-size:12pt;font-family: "Times New Roman", Georgia, Serif;'>Content
+			</div>   
+		  </p>
+		  
+		  <p>
+		    <b>Caption:</b><br>
+			<div class="blog_post" style='font-size:12pt;font-family: "Times New Roman", Georgia, Serif;'>
+			  <img src="../images/prod_large.jpg" alt="system framework" style="width:500px;">
+			</div>   
+		  </p>
+		  
+		  <p>
+			<b>Related Publication:</b>
+		    <div class="blog_post" id="publication">
+              <script>
+                  var xhttp = new XMLHttpRequest();
+                  xhttp.onreadystatechange = function() {
+                      if (xhttp.readyState == 4 && xhttp.status == 200) {
+                      myFunction(xhttp);
+                      }
+                  };
+                  xhttp.open("GET","../publication.xml", true);
+                  xhttp.send();
+				  var myName = ['Shuyue Lan'];
+				  
+				  // list out the papers of a specific author
+                  function myFunction(xml) {
+                      var xmlDoc = xml.responseXML;
+                      var doc = xmlDoc.documentElement.childNodes;
 
-        <!-- description starts here -->
-        <div>
-        <!-- <img src="images/demo2_small.jpg" alt="" style="width:100%"> -->
+                      // add papers
+                      for(var i=0;i<doc.length;i++)
+                      {
+                        if(doc[i].nodeName=="#text") {continue;}
+                        var year = doc[i].getElementsByTagName("year")[0].childNodes[0].nodeValue.toString();
+                        // add papers
+                        var li = document.createElement("li");
 
+						var authors = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString();
+						var flag = 0;
+						for(;flag<myName.length;flag++) {if(authors.includes(myName[flag])) break;}
+						if(flag==myName.length) continue;
+						
+                        var font = document.createElement("font");
+                        font.innerHTML = doc[i].getElementsByTagName("author")[0].childNodes[0].nodeValue.toString()+". ";
+                        var br = document.createElement("br");
+                        li.appendChild(font);
+
+                        var a = document.createElement("a");
+                        a.target ="#"; a.href = doc[i].getElementsByTagName("source").length>0?doc[i].getElementsByTagName("source")[0].childNodes[0].nodeValue.toString():"#";
+                        a.innerHTML = doc[i].getElementsByTagName("title")[0].childNodes[0].nodeValue.toString()+". ";                       
+						li.appendChild(a);
+                  
+                        var font = document.createElement("font");
+                        var location = doc[i].getElementsByTagName("location").length>0?doc[i].getElementsByTagName("location")[0].childNodes[0].nodeValue.toString()+".":"";
+                        var month = doc[i].getElementsByTagName("month").length>0?doc[i].getElementsByTagName("month")[0].childNodes[0].nodeValue.toString():"";
+                        var press = doc[i].getElementsByTagName("press").length>0?doc[i].getElementsByTagName("press")[0].childNodes[0].nodeValue.toString()+".":"";
+                        font.innerHTML = press+" "+location+" "+month+" "+year;
+                        var br = document.createElement("br");
+                        li.appendChild(font); li.appendChild(br);
+
+                        document.getElementById("publication").appendChild(li);
+                      }
+                  }
+              </script>
+            </div>
+		  </p>
         </div>
         <!-- description ends here -->
 
