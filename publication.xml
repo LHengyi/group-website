@@ -30,7 +30,7 @@
     <source>http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=7331368&amp;newsearch=true&amp;queryText=Analysis%20and%20Optimization%20of%20Soft%20Error%20Tolerance%20Strategies%20for%20Real-time%20Systems</source>
   </paper>
 
-  <paper type='conference'>
+  <paper type='journal'>
     <title>Security-Aware Design Methodology and Optimization for Automotive Systems</title>
     <author>Chung-Wei Lin, Bowen Zheng*, Qi Zhu and Alberto Sangiovanni-Vincentelli</author>
     <press>ACM Transactions on Design Automation of Electronic Systems (TODAES)</press>
@@ -51,7 +51,7 @@
               
   <paper type='conference'>
     <title>Design and Verification for Transportation System Security</title>
-    <author>Bowen Zheng, Wenchao Li, Peng Deng, Leonard Gerard, Qi Zhu and Natarajan Shankar</author>
+    <author>Bowen Zheng*, Wenchao Li, Peng Deng*, Leonard Gerard, Qi Zhu and Natarajan Shankar</author>
     <press>52nd ACM/IEEE Design Automation Conference (DAC)</press>
     <year>2015</year>
     <month>Jun.</month>
@@ -84,5 +84,24 @@
     <month>Apr.</month>
     <source>http://dl.acm.org/citation.cfm?id=2735972</source>
   </paper>
+  
+  <paper type='conference'>
+    <title>Lifetime Optimization for Real-Time Embedded Systems Considering Electromigration Effects</title>
+    <author>Taeyoung Kim, Bowen Zheng*, Hai-Bao Chen, Qi Zhu, Valeriy Sukharev and Sheldon X.-D. Tan </author>
+    <press>6th ACM/IEEE International Conference on Cyber-Physical Systems (ICCPS)</press>
+    <year>2014</year>
+    <month>Nov.</month>
+    <source>http://dl.acm.org/citation.cfm?id=2691454</source>
+  </paper>
+  
+  <paper type='journal'>
+      <title>Cross-Layer Codesign for Secure Cyber-Physical Systems</title>
+      <author>Bowen Zheng*, Peng Deng*, Rajasekhar Anguluri, Qi Zhu and Fabio Pasqualetti</author>
+      <press>IEEE Transactions on Computer-aided Design of Integrated Circuits and Systems (TCAD)</press>
+      <year>2016</year>
+      <month>Feb.</month>
+      <source>http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=7401009&tag=1</source>
+    </paper>
+	  
 
 </publication>
